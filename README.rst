@@ -8,17 +8,26 @@ Spatial Biology Facility at King's College London
 
 Introduction:
 ===============
-Brief description of the project
+In the Spatial Biology Facility at King's College London, we utilise both CosMx and Xenium technologies. The data is then integrated into a Python workflow, allowing us to fully leverage the spatial biology aspects and facilitate multimodal integration.
 
 🎯 Roadmap
 ====
 
-* Item Napari + CosMx plugin
-* Item CosMx/Xenium Cconda environment 
-* Item CosMx/Xenium Reader
-* Item CosMx/Xenium QC scripts
-* Item CosMx/Xenium analysis codes
-* Item Cell composition code for CosMx
+Numerical materials:
+--------------------
+* Napari + CosMx plugin
+* CosMx/Xenium conda environment 
+* CosMx/Xenium Reader
+* CosMx/Xenium QC scripts
+* CosMx/Xenium analysis codes
+* Cell composition code for CosMx
+
+Documentations:
+--------------------
+* Integration workflow
+* How to use Napari
+* SpatialData object overview
+
 
 📫 Contact
 ====
