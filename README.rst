@@ -19,8 +19,10 @@ Numerical materials:
 * CosMx/Xenium conda environment 
 * CosMx/Xenium Reader
 * CosMx/Xenium QC scripts
+* CosMx/Xenium resegmentation scripts
+* CosMx Cell composition code 
 * CosMx/Xenium analysis codes
-* Cell composition code for CosMx
+
 
 Documentations:
 --------------------
