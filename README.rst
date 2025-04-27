@@ -17,7 +17,7 @@ Brief description of the project
 📫 Contact
 ====
 
-For any questions, you can directly reach out to Anthony Baptista by emailing [anthony.baptista@kcl.ac.uk](mailto:anthony.baptista@kcl.ac.uk).
+For any questions, you can directly reach out to Anthony Baptista by emailing `anthony.baptista@kcl.ac.uk <mailto:anthony.baptista@kcl.ac.uk>`_.
 
 ♻️ License
 ====
