@@ -3,13 +3,9 @@ Spatial Biology Facility at King's College London
 =============================================================================================
 
 .. image:: images/kcl_logo.png
-   :alt: logo
-   :align: left
    :width: 125
 
 .. image:: images/sbf_logo.png
-   :alt: logo
-   :align: right
    :width: 200
 
 ## Introduction
