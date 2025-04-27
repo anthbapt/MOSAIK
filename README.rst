@@ -13,6 +13,12 @@ Brief description of the project
 🎯 Roadmap
 ====
 
+* Item Napari + CosMx plugin
+* Item CosMx/Xenium Cconda environment 
+* Item CosMx/Xenium Reader
+* Item CosMx/Xenium QC scripts
+* Item CosMx/Xenium analysis codes
+* Item Cell composition code for CosMx
 
 📫 Contact
 ====
