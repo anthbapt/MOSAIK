@@ -6,8 +6,8 @@ Spatial Biology Facility at King's College London
 |    :width: 125px                     |          :width: 210px               |
 +--------------------------------------+--------------------------------------+
 
-## Introduction
-
+Introduction:
+===============
 Brief description of the project
 
 🎯 Roadmap
@@ -29,18 +29,12 @@ and indicate if changes were made) in any reasonable manner, but not in any way 
 licensor endorses you or your use and with no additional restrictions.
 
 
-## Contributors ✨:
+Contributors ✨:
+===============
++---------------------------------------------------------------------------+
+| .. image:: https://api.dicebear.com/9.x/rings/svg?seed=Anthony%20Baptista |
+|    :width: 100px                                                          |
+|                                                                           |
+| **Anthony Baptista**                                                      |
++---------------------------------------------------------------------------+
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center"><a href=""><img src="https://api.dicebear.com/9.x/rings/svg?seed=Anthony%20Baptista" width="100px;" alt="Anthony Baptista"/><br /><sub><b>Anthony Baptista</b></sub></a><br /></td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
