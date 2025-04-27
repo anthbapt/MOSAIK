@@ -8,7 +8,7 @@ Spatial Biology Facility at King's College London
 
 Introduction:
 ===============
-In the Spatial Biology Facility at King's College London, we utilise both CosMx and Xenium technologies. The data is then integrated into a Python workflow, allowing us to fully leverage the spatial biology aspects and facilitate multimodal integration.
+In King's College London at the `Spatial Biology Facility <https://www.kcl.ac.uk/research/facilities/the-spatial-biology-facility>`_, we utilise both CosMx and Xenium technologies. The data is then integrated into a Python workflow, allowing us to fully leverage the spatial biology aspects and facilitate multimodal integration.
 
 🎯 Roadmap
 ====
