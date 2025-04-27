@@ -11,16 +11,16 @@ Introduction:
 Brief description of the project
 
 🎯 Roadmap
----
+====
 
 
 📫 Contact
----
+====
 
 For any questions, you can directly reach out to Anthony Baptista by emailing [anthony.baptista@kcl.ac.uk](mailto:anthony.baptista@kcl.ac.uk).
 
 ♻️ License
----
+====
 
 This work is licensed under the MIT license (code) and Creative Commons Attribution 4.0 International license (for documentation).
 You are free to share and adapt the material for any purpose, even commercially,
