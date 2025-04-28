@@ -33,6 +33,13 @@ Documentations:
 * SpatialData object overview
 
 
+
+Integration workflow:
+--------------------
+.. image:: images/sbf_workflow.png    
+|    :width: 400px  
+
+
 📫 Contact
 ====
 
