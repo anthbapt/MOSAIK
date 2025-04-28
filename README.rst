@@ -47,7 +47,16 @@ How using Napari:
 7. Launch the stitching by pressing the "**Stitch**" button.
 8. Wait until the stitching process finishes. There is no indicator that shows the stitching is running, except for the loading cursor. Therefore, avoid clicking the "**Stitch**" button multiple times. Once the stitching is complete, a message will appear in the right panel.
 9. When the stitching is finished, the output directory contains an "**images**" folder with all the FOVs across different fluorescent channels, and a "**targets.hdf5**" file that stores the transcripts.
-10. To load your Napari project, restart Napari 0.4.17 and drag the project folder — which contains both the "**images**" folder and the "**targets.hdf5**" file into the Napari window.
+10. To load your Napari project, restart Napari 0.4.17 and drag the project folder, which contains both the "**images**" folder and the "**targets.hdf5**" file into the Napari window.
+
+11. When the project folder is loaded, several panels allow the user to visualize the different information from the CosMx run:
+
+
+    * **Morphology Images** panel allows adding fluorescent channels (panel on the right).
+    * **RNA Transcripts** panel allows adding transcripts (panel on the right).
+    * **Layer list** allows controlling the different objects, including transcripts, fluorescent channels, and segmentation (panel on the left).
+    * **Layer controls** panel allows adjusting the visualization of the different objects (panel on the left).
+
 
 SpatialData object overview:
 ------------------------------
