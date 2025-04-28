@@ -33,10 +33,10 @@ Integration workflow:
 How using Napari:
 --------------------
 
-1. Install Napari 0.4.17
+1. Install Napari 0.4.17 
 2. Launch Napari
 3. Install CosMx-plugin: pip install napari_CosMx-0.4.17.3-py3-none-any.whl
-4. Drag napari_example_cosmx_launcher
+4. Drag the folder napari_cosmx_launcher into Napari window, the folder can be downloaded at this `link <https://emckclac-my.sharepoint.com/:f:/g/personal/k2481276_kcl_ac_uk/EkO8xJFpX8ZBv_lq-5zRHQQBjcoTOE8PONclhqUfj20zSw?e=WtIiKX>`_
 5. Browse and select a parent folder that contain you CosMx data
 6. Select an output folder
 7. Launch the stitching
