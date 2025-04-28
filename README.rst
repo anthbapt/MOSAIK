@@ -16,7 +16,7 @@ In King's College London at the `Spatial Biology Facility <https://www.kcl.ac.uk
 Numerical materials:
 --------------------
 * `Napari v0.4.17 <https://github.com/napari/napari/releases/tag/v0.4.17>`_ + CosMx plugin (**napari/napari_CosMx-0.4.17.3-py3-none-any.whl**)
-* CosMx/Xenium conda environment 
+* CosMx/Xenium conda environment (**env/cosmx.yml**)
 * CosMx/Xenium Reader
 * CosMx/Xenium QC scripts
 * CosMx/Xenium resegmentation scripts
