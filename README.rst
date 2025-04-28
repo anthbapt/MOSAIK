@@ -61,6 +61,9 @@ How using Napari:
 SpatialData object overview:
 ------------------------------
 
+.. image:: images/spatialdata_object.png
+    :width: 700px  
+
 📫 Contact
 ====
 
