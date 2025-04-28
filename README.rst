@@ -33,15 +33,21 @@ Integration workflow:
 How using Napari:
 --------------------
 
-1. Install Napari 0.4.17 
-2. Launch Napari
-3. Install CosMx-plugin: pip install napari_CosMx-0.4.17.3-py3-none-any.whl
-4. Drag the folder napari_cosmx_launcher into Napari window, the folder can be downloaded at this `link <https://emckclac-my.sharepoint.com/:f:/g/personal/k2481276_kcl_ac_uk/EkO8xJFpX8ZBv_lq-5zRHQQBjcoTOE8PONclhqUfj20zSw?e=WtIiKX>`_
-5. Browse and select a parent folder that contain you CosMx data
-6. Select an output folder
-7. Launch the stitching
-8. Enjoy the visualisation of your CosMx run
+1. Install Napari 0.4.17.
+2. Launch Napari and open the IPython console window (indicated by the symbol "**>_**").
+3. Install the CosMx-plugin with the following command:
 
+.. code-block:: python
+
+    pip install napari_CosMx-0.4.17.3-py3-none-any.whl
+
+4. Drag the napari_cosmx_launcher folder into the Napari window. You can download the folder from this `link <https://emckclac-my.sharepoint.com/:f:/g/personal/k2481276_kcl_ac_uk/EkO8xJFpX8ZBv_lq-5zRHQQBjcoTOE8PONclhqUfj20zSw?e=WtIiKX>`_
+5. In the right panel, browse to and select the parent folder that contains your CosMx run.
+6. Choose the output folder.
+7. Launch the stitching by pressing the "**Stitch**" button.
+8. Wait until the stitching process finishes. There is no indicator that shows the stitching is running, except for the loading cursor. Therefore, avoid clicking the "**Stitch**" button multiple times. Once the stitching is complete, a message will appear in the right panel.
+9. When the stitching is finished, the output directory contains an "**images**" folder with all the FOVs across different fluorescent channels, and a "**targets.hdf5**" file that stores the transcripts.
+10. To load your Napari project, restart Napari 0.4.17 and drag the project folder — which contains both the "**images**" folder and the "**targets.hdf5**" file into the Napari window.
 
 SpatialData object overview:
 ------------------------------
