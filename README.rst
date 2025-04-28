@@ -24,21 +24,18 @@ Numerical materials:
 * CosMx/Xenium analysis codes
 
 
-
-
-Documentations:
---------------------
-* Integration workflow
-* How to use Napari
-* SpatialData object overview
-
-
-
 Integration workflow:
 --------------------
-.. image:: images/sbf_workflow.png    
-|    :width: 400px  
 
+.. image:: images/sbf_workflow.png    
+
+
+How using Napari:
+--------------------
+
+
+SpatialData object overview:
+------------------------------
 
 📫 Contact
 ====
