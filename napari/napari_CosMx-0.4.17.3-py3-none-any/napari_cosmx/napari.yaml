@@ -1,0 +1,11 @@
+name: napari-CosMx
+display_name: napari CosMx
+contributions:
+  commands:
+    - id: napari-CosMx.get_reader
+      python_name: napari_cosmx._reader:napari_get_reader
+      title: Open data with napari CosMx
+  readers:
+    - command: napari-CosMx.get_reader
+      filename_patterns: ['*']
+      accepts_directories: true

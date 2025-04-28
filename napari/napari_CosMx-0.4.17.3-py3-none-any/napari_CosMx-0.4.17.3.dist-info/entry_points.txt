@@ -1,0 +1,16 @@
+[console_scripts]
+create-anndata = napari_cosmx.utils.create_anndata:main
+create-ome-ngff = napari_cosmx.utils.create_ome_zarr:main
+export-tiff = napari_cosmx.utils.export_tiff:main
+load-images = napari_cosmx.utils.load_images:main
+read-targets = napari_cosmx.utils.read_targets:main
+stitch-composite = napari_cosmx.utils.stitch_composite:main
+stitch-encoded = napari_cosmx.utils.stitch_encoded:main
+stitch-expression = napari_cosmx.utils.stitch_expression:main
+stitch-fovgrid = napari_cosmx.utils.stitch_fovgrid:main
+stitch-images = napari_cosmx.utils.stitch_images:main
+stitch-targets = napari_cosmx.utils.stitch_targets:main
+
+[napari.manifest]
+napari-CosMx = napari_cosmx:napari.yaml
+

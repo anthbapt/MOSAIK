@@ -1,0 +1,141 @@
+Metadata-Version: 2.1
+Name: napari-CosMx
+Version: 0.4.17.3
+Summary: View CosMx images and data in napari
+Home-page: https://github.com/Nanostring-Biostats/napari-CosMx
+Author: Bruker Spatial Biology
+Author-email: Evelyn.Metzger@bruker.com
+License: Bruker Spatial Biology Software License Agreement for Non-Commercial Use
+Project-URL: Bug Tracker, https://github.com/Nanostring-Biostats/napari-CosMx/issues
+Project-URL: Documentation, https://github.com/Nanostring-Biostats/napari-CosMx#README.md
+Project-URL: Source Code, https://github.com/Nanostring-Biostats/napari-CosMx
+Project-URL: User Support, https://github.com/Nanostring-Biostats/napari-CosMx/issues
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Framework :: napari
+Classifier: Topic :: Software Development :: Testing
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: napari
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: anndata
+Requires-Dist: vaex-core
+Requires-Dist: vaex-hdf5
+Requires-Dist: tifffile
+Requires-Dist: tqdm
+Requires-Dist: zarr
+Requires-Dist: imagecodecs
+Requires-Dist: scikit-learn
+Requires-Dist: distributed
+Provides-Extra: dev
+Requires-Dist: linkify-it-py; extra == "dev"
+Requires-Dist: myst-parser; extra == "dev"
+Requires-Dist: nbsphinx<0.8.7,>=0.8.1; extra == "dev"
+Requires-Dist: sphinx>=5.1.1; extra == "dev"
+Requires-Dist: sphinx-argparse-cli; extra == "dev"
+Requires-Dist: sphinx-rtd-theme==1.2.2; extra == "dev"
+Requires-Dist: sphinx-copybutton; extra == "dev"
+Requires-Dist: sphinx-design; extra == "dev"
+Requires-Dist: sphinx-tabs; extra == "dev"
+Requires-Dist: sphinx-gallery==0.8.2; extra == "dev"
+Requires-Dist: Sphinx-Substitution-Extensions; extra == "dev"
+Requires-Dist: PySide2; extra == "dev"
+Requires-Dist: datashader; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: pytest-qt; extra == "dev"
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: linkify-it-py; extra == "docs"
+Requires-Dist: myst-parser; extra == "docs"
+Requires-Dist: nbsphinx<0.8.7,>=0.8.1; extra == "docs"
+Requires-Dist: sphinx>=5.1.1; extra == "docs"
+Requires-Dist: sphinx-argparse-cli; extra == "docs"
+Requires-Dist: sphinx-rtd-theme==1.2.2; extra == "docs"
+Requires-Dist: sphinx-copybutton; extra == "docs"
+Requires-Dist: sphinx-design; extra == "docs"
+Requires-Dist: sphinx-tabs; extra == "docs"
+Requires-Dist: sphinx-gallery==0.8.2; extra == "docs"
+Requires-Dist: Sphinx-Substitution-Extensions; extra == "docs"
+Requires-Dist: PySide2; extra == "docs"
+Requires-Dist: datashader; extra == "docs"
+Provides-Extra: testing
+Requires-Dist: pytest-cov; extra == "testing"
+Requires-Dist: pytest-qt; extra == "testing"
+Requires-Dist: pytest>=7.0.0; extra == "testing"
+
+# napari-CosMx
+
+View CosMx images and data in napari
+
+----------------------------------
+
+This [napari] plugin was generated with [Cookiecutter] using [@napari]'s [cookiecutter-napari-plugin] template.
+
+<!--
+Don't miss the full getting started guide to set up your new package:
+https://github.com/napari/cookiecutter-napari-plugin#getting-started
+
+and review the napari docs for plugin developers:
+https://napari.org/plugins/stable/index.html
+-->
+
+## Installation
+
+First clone this repository to your local machine with the command:
+```
+git clone https://github.com/Nanostring-Biostats/napari-CosMx
+```
+
+The napari viewer is a Python-based application and requires you have Python on your system. A popular way to install Python is via the [Anaconda](https://www.anaconda.com/products/individual) platform. After you download Anaconda Individual Edition, run the installer and accept the defaults.
+
+After installation is finished, there will be an Anaconda Prompt item in your Start menu. Click that and then type the following commands to create a new virtual environment for your napari installation.
+
+```
+conda create -y -n napari-env -c conda-forge python=3.9
+conda activate napari-env
+```
+
+
+If successful your command prompt will now have a `(napari-env)` label on it.
+
+You can now install napari, Jupyter notebook, and this napari-CosMx plugin.
+
+```
+pip install notebook
+pip install "napari[all]"
+```
+
+To install `napari-CosMx` navigate to the root directory of this repository where you cloned it on your local machine, then:
+```
+pip install .
+```
+
+Finally, type `jupyter notebook` and navigate to the `vignettes` directory and open `gemini.ipynb`. If you are able to run the cells in that notebook your installation was successful.
+
+## Issues
+
+If you encounter any problems, please [file an issue] along with a detailed description.
+
+[napari]: https://github.com/napari/napari
+[Cookiecutter]: https://github.com/audreyr/cookiecutter
+[@napari]: https://github.com/napari
+[cookiecutter-napari-plugin]: https://github.com/napari/cookiecutter-napari-plugin
+
+[file an issue]: https://github.com/Nanostring-Biostats/napari-CosMx/issues
+
+[napari]: https://github.com/napari/napari
+[tox]: https://tox.readthedocs.io/en/latest/
+[pip]: https://pypi.org/project/pip/
+[PyPI]: https://pypi.org/
+
+
