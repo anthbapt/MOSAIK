@@ -23,6 +23,8 @@ Numerical materials:
 * CosMx Cell composition code 
 * CosMx/Xenium analysis codes
 
+`Napari v0.4.17 <https://github.com/napari/napari/releases/tag/v0.4.17>`_
+
 
 Documentations:
 --------------------
