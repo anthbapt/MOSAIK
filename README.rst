@@ -61,6 +61,33 @@ How using Napari:
 SpatialData object overview:
 ------------------------------
 
+The purpose of the **SpatialData** object is to lay the foundation for methods and pipelines to analyse spatial omics data.
+
+We can think of a **SpatialData object** as a container for various **Elements**. An **Element** is either a **SpatialElement** (Images, Labels, Points, Shapes) or a **Table**.
+
+Below is a brief description of each:
+
+- **Images**: H&E or other staining images.
+- **Labels**: Pixel-level segmentation maps.
+- **Points**: Transcript locations with gene information, or landmark points.
+- **Shapes**: Cell or nucleus boundaries, subcellular structures, anatomical annotations, or regions of interest (ROIs).
+- **Tables**: Sparse or dense matrices annotating SpatialElements or storing arbitrary (non-spatial) metadata. They do not contain spatial coordinates.
+
+We can categorise the **SpatialElements** into two broad types:
+
+- **Rasters**: Data made up of pixels, including Images and Labels.
+- **Vectors**: Data made up of points and lines. (Polygons are considered vectors, as they are simply a list of connected points.) Points and Shapes belong to this category.
+
+However we can go from one type of object into another by the two following processes:
+
+- **Vectorization**: The process where each label value (i.e., an integer value greater than 0) is converted into a `shapely` Polygon or MultiPolygon. This corresponds to the conversion of Labels into Shapes.
+- **Rasterization**: The creation of a 2D image that represents geometries (polygons, multipolygons, points). This corresponds to the conversion of Shapes (or Points) into Labels.
+
+
+Finally, it is possible to visually interact with a **SpatialData** object, through the **spatialdata-napari** plugin.
+
+For more information and tutorials, see:  
+`spatialdata-napari documentation <https://spatialdata.scverse.org/projects/napari/en/latest/notebooks/spatialdata.html>`_
 .. image:: images/spatialdata_object.png
     :width: 700px  
 
