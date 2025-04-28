@@ -33,6 +33,15 @@ Integration workflow:
 How using Napari:
 --------------------
 
+1. Install Napari 0.4.17
+2. Launch Napari
+3. Install CosMx-plugin: pip install napari_CosMx-0.4.17.3-py3-none-any.whl
+4. Drag napari_example_cosmx_launcher
+5. Browse and select a parent folder that contain you CosMx data
+6. Select an output folder
+7. Launch the stitching
+8. Enjoy the visualisation of your CosMx run
+
 
 SpatialData object overview:
 ------------------------------
