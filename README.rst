@@ -88,6 +88,7 @@ Finally, it is possible to visually interact with a **SpatialData** object, thro
 
 For more information and tutorials, see:  
 `spatialdata-napari documentation <https://spatialdata.scverse.org/projects/napari/en/latest/notebooks/spatialdata.html>`_
+
 .. image:: images/spatialdata_object.png
     :width: 700px  
 
