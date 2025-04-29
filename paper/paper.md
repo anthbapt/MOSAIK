@@ -1,7 +1,34 @@
-# Spatial Biology Facility at King's College London
+---
+title: 'Spatial trancriptomics workflow'
+tags:
+  - Python
+  - Spatial-transcriptomics
+  - Visualisation
+  - Multi-modality
+authors:
+  - name: Anthony Baptista
+    orcid: 0000-0002-8514-0250
+    affiliation: "1, 2"
+affiliations:
+ - name: Cancer Bioinformatics, School of Cancer & Pharmaceutical Sciences, Faculty of Life Sciences and Medicine, King's College London, London, United Kingdom
+   index: 1
+ - name: The Alan Turing Institute, The British Library, London, NW1 2DB, United Kingdom.
+   index: 2
+date: 29 April 2024
+bibliography: bibliography.bib
+---
 
-| ![KCL Logo](images/kcl_logo.png){width=125} | ![SBF Logo](images/sbf_logo.png){width=210} |
-|--------------------------------------------|---------------------------------------------|
+
+# Summary
+# Statement of need
+# Overview of the workflow
+# Preliminary results
+
+# Acknowledgements
+Anthony Baptista acknowledges support from the CRUK City of London Centre Award CTRQQR-2021100004.
+
+# References
+
 
 ## Introduction
 
@@ -21,7 +48,7 @@ At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/r
 
 ### Integration workflow
 
-![Workflow](images/sbf_workflow.png)
+![Workflow](figures/sbf_workflow.png)
 
 ## How to use Napari
 
@@ -75,11 +102,6 @@ A SpatialData object is a container for **Elements**, either:
 - **Vectorization**: Converts Labels → Shapes (`shapely` polygons)
 - **Rasterization**: Converts Shapes/Points → Labels (2D image representation)
 
-You can explore a SpatialData object visually using the **spatialdata-napari** plugin.
-
-For tutorials, see the [spatialdata-napari documentation](https://spatialdata.scverse.org/projects/napari/en/latest/notebooks/spatialdata.html).
-
-![SpatialData Object](images/spatialdata_object.png)
 
 ## 📫 Contact
 
@@ -95,8 +117,3 @@ This work is licensed under:
 
 You may share/adapt for any purpose, including commercially, with proper credit and no added restrictions.
 
-## ✨ Contributors
-
-| ![Anthony Baptista](https://api.dicebear.com/9.x/rings/svg?seed=Anthony%20Baptista){width=100} |
-|----------------------------------------------------------------------------------------------|
-| **Anthony Baptista**                                                                         |
