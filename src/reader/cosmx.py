@@ -1,9 +1,12 @@
 import os
 import re
+import tempfile
 from collections.abc import Mapping
 from pathlib import Path
 from types import MappingProxyType
 from typing import Any
+import pyarrow.parquet as pq
+from collections import Counter
 
 import dask.array as da
 import numpy as np
@@ -20,12 +23,7 @@ from spatialdata._logging import logger
 from spatialdata.models import Image2DModel, Labels2DModel, PointsModel, ShapesModel, TableModel
 from spatialdata.transformations.transformations import Affine, Identity
 from shapely.geometry import Point, Polygon
-from collections import Counter
-
 from _constants import CosmxKeys
-import tempfile
-import pyarrow.parquet as pq
-
 
 def cosmx(
     path: str | Path,
@@ -35,40 +33,34 @@ def cosmx(
     imread_kwargs: Mapping[str, Any] = MappingProxyType({}),
     image_models_kwargs: Mapping[str, Any] = MappingProxyType({}),
     flip_image: bool = False,
-    type_image: str = 'composite' #morphology
-) -> SpatialData:
+    type_image: str = 'composite') -> SpatialData:
+    """Read Nanostring CosMx Spatial Molecular Imager dataset and return a SpatialData object.
+
+    This function reads multiple data components (counts, metadata, images, labels, transcripts, polygons)
+    from a CosMx dataset and assembles them into a `SpatialData` object with correct transformations
+    and spatial metadata.
+
+    Args:
+        path (str | Path): Path to the root directory containing CosMx files.
+        dataset_id (str | None, optional): Identifier of the dataset. If None, inferred from filenames.
+        transcripts (bool, optional): Whether to read transcript data (default is True).
+        polygons (bool, optional): Whether to read and parse polygon data (default is True).
+        imread_kwargs (Mapping[str, Any], optional): Extra keyword arguments for image reading via `imread`.
+        image_models_kwargs (Mapping[str, Any], optional): Extra keyword arguments for image model parsing.
+        flip_image (bool, optional): Whether to vertically flip images and labels (default is False).
+        type_image (str, optional): Image type to load, either "composite" or "morphology" (default is "composite").
+
+    Returns:
+        SpatialData: A `SpatialData` object containing images, labels, points (transcripts), shapes (polygons), and table data.
+
+    Raises:
+        ValueError: If the `dataset_id` cannot be inferred.
+        FileNotFoundError: If any of the required files or directories are missing.
+
+    See Also:
+        https://nanostring.com/products/cosmx-spatial-molecular-imager/
     """
-    Read *Cosmx Nanostring* data.
 
-    This function reads the following files:
-
-        - ``<dataset_id>_`{cx.COUNTS_SUFFIX!r}```: Counts matrix.
-        - ``<dataset_id>_`{cx.METADATA_SUFFIX!r}```: Metadata file.
-        - ``<dataset_id>_`{cx.FOV_SUFFIX!r}```: Field of view file.
-        - ``{cx.IMAGES_DIR!r}``: Directory containing the images.
-        - ``{cx.LABELS_DIR!r}``: Directory containing the labels.
-
-    .. seealso::
-
-        - `Nanostring Spatial Molecular Imager <https://nanostring.com/products/cosmx-spatial-molecular-imager/>`_.
-
-    Parameters
-    ----------
-    path
-        Path to the root directory containing *Nanostring* files.
-    dataset_id
-        Name of the dataset.
-    transcripts
-        Whether to also read in transcripts information.
-    imread_kwargs
-        Keyword arguments passed to :func:`dask_image.imread.imread`.
-    image_models_kwargs
-        Keyword arguments passed to :class:`spatialdata.models.Image2DModel`.
-
-    Returns
-    -------
-    :class:`spatialdata.SpatialData`
-    """
     path = Path(path)
 
     # tries to infer dataset_id from the name of the counts file
@@ -289,6 +281,7 @@ def cosmx(
     # read labels
     print("Read Labels")
     labels = {}
+    
     for fname in os.listdir(path / CosmxKeys.LABELS_DIR):
         
         if fname.endswith(file_extensions):
@@ -326,6 +319,7 @@ def cosmx(
     # read polygons
     print("Read polygons")
     shapes: dict[str, GeoDataFrame] = {}
+    
     if polygons:
         
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -334,7 +328,7 @@ def cosmx(
             counter = Counter(polygons_data['cell'])
             cell_bad_polygons = [i for i, count in counter.items() if count < 4]
             polygons_data = polygons_data[~polygons_data["cell"].isin(cell_bad_polygons)]
-            polygons_data["geometry"] = polygons_data.apply(lambda row: Point(row["x_global_px"], row["y_global_px"]), axis=1)
+            polygons_data["geometry"] = polygons_data.apply(lambda row: Point(row["x_local_px"], row["y_local_px"]), axis=1)
             polygons = polygons_data.groupby("cell")["geometry"].apply(lambda points: Polygon([(p.x, p.y) for p in points]))
             
             geo_df = GeoDataFrame(polygons, geometry=polygons)
@@ -345,15 +339,20 @@ def cosmx(
             geo_df['fov'] = geo_df['cell'].map(cell_to_fov)
             
             for fov in fovs_counts:
+                aff = affine_transforms_to_global[fov]
                 sub_geo_df = geo_df[geo_df['fov'] == int(fov)]
 
                 if len(sub_geo_df) > 0:
-                    print(sub_geo_df)
-                    shapes[f"{fov}_shapes"] = ShapesModel.parse(sub_geo_df)
+                    shapes[f"{fov}_shapes"] = ShapesModel.parse(sub_geo_df,
+                                                                transformations={
+                                                                    fov: Identity(),
+                                                                    "global": aff,
+                                                                    "global_only_labels": aff})
 
     # read transcripts
     print("Read transcripts")
     points: dict[str, DaskDataFrame] = {}
+    
     if transcripts:
         
         with tempfile.TemporaryDirectory() as tmpdir:
