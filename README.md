@@ -1,6 +1,6 @@
 # Spatial Biology Facility at King's College London
 
-<img src="images/kcl_logo.png" width="125px"> | <img src="images/sbf_logo.png" width="210px">
+<img src="images/kcl_logo.png" width="125px">  <img src="images/sbf_logo.png" width="210px">
 
 
 ## Introduction
@@ -97,6 +97,6 @@ You may share/adapt for any purpose, including commercially, with proper credit 
 
 ## ✨ Contributors
 
-<img src="https://api.dicebear.com/9.x/rings/svg?seed=Anthony%20Baptista" width="100px">
-|----------------------------------------------------------------------------------------------|
-| **Anthony Baptista**                                                                         |
+|<img src="https://api.dicebear.com/9.x/rings/svg?seed=Anthony%20Baptista" width="100px">   |
+|------------------------------------------------------------------------------------------|
+| Anthony Baptista                                                                         |
