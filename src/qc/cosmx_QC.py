@@ -2,13 +2,15 @@
 # -*- coding: utf-8 -*-
 import os
 import warnings
+import logging
+logging.basicConfig(level=logging.WARNING)
 warnings.filterwarnings("ignore")
-
 path = '/Users/k2481276/Documents/CosMx/'
 os.chdir(path)
 
 from spatialdata.transformations import Affine, set_transformation
 import matplotlib.pyplot as plt
+from sbf import visualise_fov
 import spatialdata as sd
 import spatialdata_plot
 import seaborn as sns
@@ -16,29 +18,6 @@ import scanpy as sc
 import pandas as pd
 import cosmx
 
-
-# =============================================================================
-# Functions set
-# =============================================================================
-def flipping_local_coordinate(sdata, fov, show = True):
-    if type(fov) == int:
-        fov = str(fov)
-    ty = sdata.images[fov + "_image"].shape[-1]
-    flipping = Affine([[1, 0, 0],
-                       [0, -1, ty],
-                       [0, 0, 1]], input_axes=("x", "y"), 
-                                   output_axes=("x", "y"))
-    
-    set_transformation(sdata.images[fov + "_image"], flipping, to_coordinate_system = fov)
-    set_transformation(sdata.labels[fov + "_labels"], flipping, to_coordinate_system = fov)
-    
-    if show == True:
-        sdata.pl.render_images(fov + "_image").pl.show(coordinate_systems=[fov])
-        sdata.pl.render_labels(fov + "_labels").pl.show(coordinate_systems=[fov])
-        sdata.pl.render_points(fov + "_points").pl.show(coordinate_systems=[fov])
-
-# fov =  '3'
-# flipping_local_coordinate(sdata, fov, show = True)
 # =============================================================================
 # Paths & Data Loading
 # =============================================================================
@@ -52,25 +31,26 @@ metafile_df = pd.read_csv(flat_file_dir_slide+ '/' + metafile)
 
 fovfile = [item for item in os.listdir(flat_file_dir_slide) if 'fov_positions_file' in item][0]
 fovfile_df = pd.read_csv(flat_file_dir_slide + '/' + fovfile)
-# =============================================================================
-# Uncomment below lines if generating zarr for the first time
-# =============================================================================
-# columns_sub = ['fov','Area','AspectRatio','CenterX_local_px','CenterY_local_px','Width',
-# 'Height','Mean.PanCK','Max.PanCK','Mean.G','Max.G','Mean.Membrane','Max.Membrane',
-# 'Mean.CD45','Max.CD45','Mean.DAPI','Max.DAPI','cell_ID','assay_type','version',
-# 'Run_Tissue_name','Panel','cellSegmentationSetId','cellSegmentationSetName',
-# 'slide_ID','CenterX_global_px','CenterY_global_px','unassignedTranscripts']
 
-# metafile_df = pd.read_csv(flat_file_dir_slide+ '/' + metafile)
-# metafile_df = metafile_df[columns_sub]
-# metafile_df.to_csv(path + slide + '/' + metafile, index = False)
+first_run = user_input = input("Is it the first run (0: False, 1: True): ")
 
-# fovfile_df = pd.read_csv(flat_file_dir_slide + '/' + fovfile)
-# fovfile_df = fovfile_df.rename({'FOV': 'fov'}, axis = 'columns')
-# fovfile_df.to_csv(path + slide + '/' + fovfile, index = False)
-
-sdata = cosmx.cosmx(path + slide, type_image = 'composite')
-sdata.write(zarr_path)
+if first_run == '1':
+    columns_sub = ['fov','Area','AspectRatio','CenterX_local_px','CenterY_local_px','Width',
+    'Height','Mean.PanCK','Max.PanCK','Mean.G','Max.G','Mean.Membrane','Max.Membrane',
+    'Mean.CD45','Max.CD45','Mean.DAPI','Max.DAPI','cell_ID','assay_type','version',
+    'Run_Tissue_name','Panel','cellSegmentationSetId','cellSegmentationSetName',
+    'slide_ID','CenterX_global_px','CenterY_global_px','unassignedTranscripts']
+    
+    metafile_df = pd.read_csv(flat_file_dir_slide+ '/' + metafile)
+    metafile_df = metafile_df[columns_sub]
+    metafile_df.to_csv(path + slide + '/' + metafile, index = False)
+    
+    fovfile_df = pd.read_csv(flat_file_dir_slide + '/' + fovfile)
+    fovfile_df = fovfile_df.rename({'FOV': 'fov'}, axis = 'columns')
+    fovfile_df.to_csv(path + slide + '/' + fovfile, index = False)
+    
+    sdata = cosmx.cosmx(path + slide, transcripts=True)
+    sdata.write(zarr_path)    
 
 # =============================================================================
 # Data Loading for QC
@@ -79,7 +59,8 @@ sdata = sd.read_zarr(zarr_path)
 adata = sdata.tables["table"]
 print(adata.obs.keys())
 
-# FOV positions
+# FOV positions 
+# Should be defined manually with the help of the Napari visualisation
 sample1 = list(range(1, 5 + 1))
 sample2 = list(range(8, 16 + 1))
 sample3 = list(range(19, 27 + 1))
@@ -163,19 +144,6 @@ plt.legend(handles, labels, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0, nc
 plt.tight_layout()
 plt.savefig('Sample_display.png', format = 'png', dpi = 600)
 
-
-g = sns.relplot(x="x_global_px", y="y_global_px", s=75, marker='s', data=fovfile_df,
-                hue='sampleID', palette = "Set2", kind="scatter")
-for line in range(0, len(fovfile_df)):
-     plt.text(fovfile_df["x_global_px"][line],
-              fovfile_df["y_global_px"][line],
-              fovfile_df["fov"][line],
-              ha='center', fontsize = 4)
-h,l = g.get_legend_handles_labels()
-g.fig.legend(h,l, ncol=2)
-plt.savefig('Sample_display.png', format = 'png', dpi = 600)
-
-
 adata.obs['fov'] = adata.obs['fov'].astype(int)
 merged_df = pd.merge(adata.obs, fovfile_df, on='fov', how='left')
 adata.obs['sampleID'] = list(merged_df['sampleID'])
@@ -214,38 +182,30 @@ fig, axs = plt.subplots(1, 3, figsize=(15, 4))
 fig.suptitle('Transcripts Statistics', fontsize=16)
 axs[0].set_title("Total transcripts per cell")
 sns.histplot(adata.obs["total_counts"], kde=False, ax=axs[0])
-
 axs[1].set_title("Unique transcripts per cell")
 sns.histplot(adata.obs["n_genes_by_counts"], kde=False, ax=axs[1])
-
 axs[2].set_title("Area of segmented cells")
 sns.histplot(adata.obs["Area"], kde=False, ax=axs[2])
 plt.tight_layout(rect=[0, 0, 1, 0.99])
 plt.savefig('statistics.png', format = 'png', dpi = 600)
 
-
 fig, axs = plt.subplots(1, 3, figsize=(15, 4))
 fig.suptitle('Transcripts Statistics FOV', fontsize=16)
 axs[0].set_title("Total transcripts per cell")
 sns.histplot(adata.obs.groupby("fov")["total_counts"].sum(), kde=False, ax=axs[0])
-
 axs[1].set_title("Unique transcripts per cell")
 sns.histplot(adata.obs.groupby("fov")["n_genes_by_counts"].sum(), kde=False, ax=axs[1])
-
 axs[2].set_title("Transcripts per FOV")
 sns.histplot(adata.obs.groupby("fov")["total_counts"].sum(), kde=False, ax=axs[2])
 plt.tight_layout(rect=[0, 0, 1, 0.99])
 plt.savefig('statistics_FOV.png', format = 'png', dpi = 600)
 
-
 fig, axs = plt.subplots(1, 3, figsize=(15, 4))
 fig.suptitle('Transcripts Statistics sampleID', fontsize=16)
 axs[0].set_title("Total transcripts per cell")
 sns.barplot(adata.obs.groupby("sampleID")["total_counts"].sum(), ax=axs[0])
-
 axs[1].set_title("Unique transcripts per cell")
 sns.barplot(adata.obs.groupby("sampleID")["n_genes_by_counts"].sum(), ax=axs[1])
-
 axs[2].set_title("Transcripts per FOV")
 sns.barplot(adata.obs.groupby("sampleID")["total_counts"].sum(), ax=axs[2])
 plt.tight_layout(rect=[0, 0, 1, 0.99])
@@ -254,11 +214,11 @@ plt.savefig('statistics_sampleID.png', format = 'png', dpi = 600)
 # ========================
 # Filtering & Normalization
 # ========================
-print(adata.shape)
+print("Original dimension: ", adata.shape)
 sc.pp.filter_cells(adata, min_counts = 100)
-print(adata.shape)
+print("Dimension after filtering cells: ", adata.shape)
 sc.pp.filter_genes(adata, min_cells = 1000)
-print(adata.shape)
+print("Dimension after filtering genes: ", adata.shape)
 
 adata.layers["counts"] = adata.X.copy()
 sc.pp.normalize_total(adata, inplace=True)
@@ -286,12 +246,10 @@ plt.legend(handles, labels, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0, nc
 g.set_ylabel("")
 g.set_xlabel("")
 plt.tight_layout()
-plt.savefig('Sample_display_transcripts2.png', format = 'png', dpi = 600)
+plt.savefig('Sample_display_transcripts_cluster.png', format = 'png', dpi = 600)
 
-    
-# visualise specific ROI
+# ========================
+# Visualise specific ROI
+# ========================
 fov =  '275'
-sdata.pl.render_images(fov + "_image").pl.show(coordinate_systems='global')
-sdata.pl.render_labels(fov + "_labels").pl.show(coordinate_systems='global')
-sdata.pl.render_points(fov + "_points").pl.show(coordinate_systems='global')
-sdata.pl.render_shapes(fov + "_shapes").pl.show(coordinate_systems='global')
+visualise_fov(sdata, coordinate = 'global')
