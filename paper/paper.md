@@ -46,6 +46,14 @@ This integrated and consistent pipeline provides a foundation for downstream mod
 
 ![Workflow](figures/sbf_workflow.png)
 
+Adding another figure with **Images**, **Shapes**, **Labels**, **Points** for both CosMx and Xenium, as follows:
+
+| Technology | Images         | Shapes | Labels | Points |
+|------------|----------------|--------|--------|--------|
+| CosMx      |      xxx       | xxx    | xxx    | xxx    |
+| Xenium     |      xxx       | xxx    | xxx    | xxx    |
+
+
 # Related software
 
 spatialdata, sopa, squidpy, scanpy, scverse
