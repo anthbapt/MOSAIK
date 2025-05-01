@@ -2,12 +2,16 @@
 
 <p align="center">
   <img src="images/kcl_logo.png" width="125px">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="images/sbf_logo.png" width="210px">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
 
 
 ## Introduction
+<p align="center">
+  <img src="images/mosaic.jpg" width="150px">
+</p>
 MOSAIC: Multi-Origin Spatial transcriptomics Analysis and Integration Core
 
 At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/research/facilities/the-spatial-biology-facility) utilizes both CosMx and Xenium technologies. The data is then integrated into a Python workflow, allowing us to fully leverage spatial biology and facilitate multimodal integration.
