@@ -1,5 +1,4 @@
 # Spatial Biology Facility at King's College London
-MOSAIC: Multi-Origin Spatial transcriptomics Analysis and Integration Core
 
 <p align="center">
   <img src="images/kcl_logo.png" width="125px">
@@ -9,6 +8,7 @@ MOSAIC: Multi-Origin Spatial transcriptomics Analysis and Integration Core
 
 
 ## Introduction
+MOSAIC: Multi-Origin Spatial transcriptomics Analysis and Integration Core
 
 At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/research/facilities/the-spatial-biology-facility) utilizes both CosMx and Xenium technologies. The data is then integrated into a Python workflow, allowing us to fully leverage spatial biology and facilitate multimodal integration.
 
