@@ -1,4 +1,5 @@
 # Spatial Biology Facility at King's College London
+MOSAIC: Multi-Origin Spatial transcriptomics Analysis and Integration Core
 
 <p align="center">
   <img src="images/kcl_logo.png" width="125px">
