@@ -91,8 +91,7 @@ For tutorials, see the [spatialdata-napari documentation](https://spatialdata.sc
 
 ## 📫 Contact
 
-For any questions, reach out to **Anthony Baptista**:  
-📧 [anthony.baptista@kcl.ac.uk](mailto:anthony.baptista@kcl.ac.uk)
+For any questions, reach out to **Anthony Baptista**: 📧 [anthony.baptista@kcl.ac.uk](mailto:anthony.baptista@kcl.ac.uk)
 
 ## ♻️ License
 
