@@ -35,17 +35,17 @@ At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/r
 
 ### CosMx
 
-1. Export the data from the AtoMx platform. The export should include all **Flat files** and the following **Raw Files**:  
+1. Export the data from the AtoMx platform. The export should include all **flatFiles** and the following **RawFiles**:  
    - `Morphology2D`  
    - `Misc`  
-   *(In AtoMx v1.4, this includes all Raw Files. In earlier versions, it includes all Raw Files **except** the Spot files.)*
+   *(In AtoMx v1.4, this includes all RawFiles. In earlier versions, it includes all RawFiles **except** the Spot files.)*
 
-2. Unzip all `.csv.gz` files in the Flat files folder. In a terminal, if your working directory is `Flat files`, run:
+2. Unzip all `.csv.gz` files in the flatFiles folder. In a terminal, if your working directory is `flatFiles`, run:
 
    ```bash
    gunzip *.csv.gz
    
-3. Now, the raw images should be included in the Flat files folder. To do this, you can use the bash script available in the `tools` folder of the GitHub repository.
+3. Now, the raw images should be included in the flatFiles folder. To do this, you can use the bash script **CellLabels.sh** available in the `tools/` folder of the GitHub repository.
 
 4. Firstly, you have to change the `SOURCE_DIR` and the `DEST_DIR` variables in the script to match your own directories.
 
@@ -56,7 +56,7 @@ At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/r
    ./CellLabels.sh
    ```
 
-6. This will create a `CellLabels` folder inside the Flat files folder.
+6. This will create a `CellLabels` folder inside the flatFiles folder.
 
 7. The last folder to include is the `CellComposite` folder from `Morphology2D`. Depending on your choice:
    - If you opt for a composite `.jpg` image (`CellComposite`)
@@ -70,7 +70,13 @@ At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/r
    python src/composition/make_composite_revised_image.py
    ```
 
-9. When the `Flat files` folder is ready—i.e., enriched with the `CellComposite`/`Morphology2D` folder and the `CellLabels` folder—you can either run the `CosMx_QC` code or create a Napari visualization (see the section **How to use Napari**).
+9. When the `flatFiles` folder is ready—i.e., enriched with the `CellComposite`/`Morphology2D` folder and the `CellLabels` folder—you can either run the `CosMx_QC` code or create a Napari visualization (see the section **How to use Napari**).
+
+
+### Xenium
+
+1. Export the data from the Xenium instrument, the folder contains a lot of files that are described in `tools/Xenium_data.xlsx` file of the GitHub repository.
+
 
 ## How to use Napari
 
