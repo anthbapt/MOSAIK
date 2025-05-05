@@ -70,12 +70,13 @@ At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/r
    python tools/make_composite_revised_image.py
    ```
 
-9. When the `flatFiles` folder is ready—i.e., enriched with the `CellComposite`/`Morphology2D` folder and the `CellLabels` folder—you can either run the `CosMx_QC` code or create a Napari visualization (see the section **How to use Napari**).
+9. When the `flatFiles` folder is ready, i.e., enriched with the `CellComposite`/`Morphology2D` folder and the `CellLabels` folder, you can either run the Python code `CosMx_QC` code or create a Napari visualisation (see the section **How to use Napari**).
 
 
 ### Xenium
 
 1. Export the data from the Xenium instrument, the folder contains a lot of files that are described in `tools/Xenium_data.xlsx` file of the GitHub repository.
+2. You can import and create the .zarr object with the Python code `Xenium_QC.py` 
 
 
 ## How to use Napari
@@ -103,11 +104,11 @@ At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/r
     - **Morphology Images**: Add fluorescent channels.
     - **RNA Transcripts**: Add transcripts.
     - **Layer list**: Manage transcripts, channels, and segmentation.
-    - **Layer controls**: Adjust visualization.
+    - **Layer controls**: Adjust visualisation.
 
 ## SpatialData object overview
 
-The **SpatialData** object forms the foundation for analyzing spatial omics data.
+The **SpatialData** object forms the foundation for analysing spatial omics data.
 
 ### Core concepts
 
@@ -127,8 +128,8 @@ A SpatialData object is a container for **Elements**, either:
 
 ### Transformations
 
-- **Vectorization**: Converts Labels → Shapes (`shapely` polygons)
-- **Rasterization**: Converts Shapes/Points → Labels (2D image representation)
+- **Vectorisation**: Converts Labels → Shapes (`shapely` polygons)
+- **Rasterisation**: Converts Shapes/Points → Labels (2D image representation)
 
 You can explore a SpatialData object visually using the **spatialdata-napari** plugin.
 
