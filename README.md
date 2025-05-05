@@ -71,14 +71,16 @@ At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/r
    python tools/make_composite_revised_image.py
    ```
 
-9. When the `flatFiles` folder is ready, i.e., enriched with the `CellComposite`/`Morphology2D` folder and the `CellLabels` folder, you can either import and create the .zarr object  with the Python code `src/qc/CosMx_QC.py` or create the Napari visualisation (see the section **How to use Napari**).
-
+9. When the `flatFiles` folder is ready, i.e., enriched with the `CellComposite`/`Morphology2D` folder and the `CellLabels` folder, you can either import and create the `.zarr` object with the Python code `src/qc/CosMx_QC.py`.
+10. Create the Napari visualisation (see the section **How to use Napari**).
+11. The Napari visualization can be used to proceed with the QC using the same code as the one used for the `.zarr` object creation (`src/qc/CosMx_QC.py`), especially for defining the different sample FOVs.
 
 ### Xenium
 
 1. Export the data from the Xenium instrument, the folder contains a lot of files that are described in `tools/Xenium_data.xlsx` file of the GitHub repository.
-2. You can import and create the .zarr object with the Python code `src/qc/Xenium_QC.py` 
-
+2. Exploring the data with [Xenium Explorer](https://www.10xgenomics.com/products/xenium-analysis)
+3. You can import and create the `.zarr` object with the Python code `src/qc/Xenium_QC.py`
+4. When the `.zarr` object is created, you can proceed with the QC using the same code as before (`src/qc/Xenium_QC.py`).
 
 ## How to use Napari
 
