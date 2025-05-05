@@ -35,25 +35,42 @@ At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/r
 
 ### CosMx
 
-1. Export the data from AtoMx platform, the exportation should include all Flat files, and the two following Raw Files: Morphology2D, and Misc (in AtoMx v1.4 it corresponds to all the Raw Files, in previous version of AtoMx, it corresponds to all the Raw Files except the Spot files)
-2. Unzip all "csv.gz" files in the Flat files folder. In a terminal you can use the following command if the working directory is Flat files
+1. Export the data from the AtoMx platform. The export should include all **Flat files** and the following **Raw Files**:  
+   - `Morphology2D`  
+   - `Misc`  
+   *(In AtoMx v1.4, this includes all Raw Files. In earlier versions, it includes all Raw Files **except** the Spot files.)*
+
+2. Unzip all `.csv.gz` files in the Flat files folder. In a terminal, if your working directory is `Flat files`, run:
 
    ```bash
-    gunzip *.csv.gz
-    ```
+   gunzip *.csv.gz
    
-3. Now, the raw images should be included in the Flat files folder, to do so, you can use the bash scipt available in the tools folder of the Github.
-4. Firstly, you have to change the "SOURCE_DIR" and the "DEST_DIR" for yours
-5. Secondly, you have to make the script executable, to do so, you can use the following command:
+3. Now, the raw images should be included in the Flat files folder. To do this, you can use the bash script available in the `tools` folder of the GitHub repository.
+
+4. Firstly, you have to change the `SOURCE_DIR` and the `DEST_DIR` variables in the script to match your own directories.
+
+5. Secondly, make the script executable and run it using the following commands:
 
    ```bash
-    chmod +x CellLabels.sh
-    ./CellLabels.sh
-    ```
+   chmod +x CellLabels.sh
+   ./CellLabels.sh
+   ```
 
-6. Now the Flat files folder cotains the CellLabels folder
-7. The last folder to include is the CellComposite folder of the Morphology2D, depending if you opt for a composite .jpg image (CellComposite) or the raw multichannels .TIF images (~200 times larger then a composite image), both folders are localised in the RawFiles folder in the subfolder named CellStatsDir.
-8. If the CellComposite folder is not present or unsatisfying, a new one can be created with the Python codes
+6. This will create a `CellLabels` folder inside the Flat files folder.
+
+7. The last folder to include is the `CellComposite` folder from `Morphology2D`. Depending on your choice:
+   - If you opt for a composite `.jpg` image (`CellComposite`)
+   - Or for raw multichannel `.TIF` images (approximately 200 times larger than composite images)
+
+   Both folders are located in the `RawFiles` directory, under the subfolder named `CellStatsDir`.
+
+8. If the `CellComposite` folder is not present or is unsatisfactory, a new one can be created using the Python script:
+
+   ```bash
+   python src/composition/make_composite_revised_image.py
+   ```
+
+9. When the `Flat files` folder is ready—i.e., enriched with the `CellComposite`/`Morphology2D` folder and the `CellLabels` folder—you can either run the `CosMx_QC` code or create a Napari visualization (see the section **How to use Napari**).
 
 ## How to use Napari
 
