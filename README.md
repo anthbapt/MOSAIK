@@ -35,17 +35,17 @@ At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/r
 
 ### CosMx
 
-1. Export the data from the AtoMx platform. The export should include all **flatFiles** and the following **RawFiles**:  
+1. Export the data from the AtoMx platform. The export should include all `flatFiles` and the following `RawFiles`  
    - `Morphology2D`  
    - `Misc`  
-   *(In AtoMx v1.4, this includes all RawFiles. In earlier versions, it includes all RawFiles **except** the Spot files.)*
+   *(In AtoMx v1.4, this includes all RawFiles. In earlier versions, it includes all RawFiles **except** the `Spot files`.)*
 
 2. Unzip all `.csv.gz` files in the flatFiles folder. In a terminal, if your working directory is `flatFiles`, run:
 
    ```bash
    gunzip *.csv.gz
    
-3. Now, the raw images should be included in the flatFiles folder. To do this, you can use the bash script **CellLabels.sh** available in the `tools/` folder of the GitHub repository.
+3. Now, the raw images should be included in the flatFiles folder. To do this, you can use the bash script `CellLabels.sh` available in the `tools/` folder of the GitHub repository.
 
 4. Firstly, you have to change the `SOURCE_DIR` and the `DEST_DIR` variables in the script to match your own directories.
 
