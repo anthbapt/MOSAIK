@@ -70,13 +70,13 @@ At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/r
    python tools/make_composite_revised_image.py
    ```
 
-9. When the `flatFiles` folder is ready, i.e., enriched with the `CellComposite`/`Morphology2D` folder and the `CellLabels` folder, you can either run the Python code `CosMx_QC` code or create a Napari visualisation (see the section **How to use Napari**).
+9. When the `flatFiles` folder is ready, i.e., enriched with the `CellComposite`/`Morphology2D` folder and the `CellLabels` folder, you can either import and create the .zarr object  with the Python code `src/qc/CosMx_QC.py` or create the Napari visualisation (see the section **How to use Napari**).
 
 
 ### Xenium
 
 1. Export the data from the Xenium instrument, the folder contains a lot of files that are described in `tools/Xenium_data.xlsx` file of the GitHub repository.
-2. You can import and create the .zarr object with the Python code `Xenium_QC.py` 
+2. You can import and create the .zarr object with the Python code `src/qc/Xenium_QC.py` 
 
 
 ## How to use Napari
