@@ -8,16 +8,14 @@
 </p>
 
 
-## Introduction
+## 📝 Introduction  
 <p align="center">
   <img src="images/mosaic.jpg" width="150px">
 </p>
 
-At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/research/facilities/the-spatial-biology-facility) utilises both CosMx and Xenium technologies. The data is then integrated into MOSAIC: Multi-Origin Spatial transcriptomics Analysis and Integration Core, allowing us to fully leverage spatial biology and facilitate multimodal integration.
+At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/research/facilities/the-spatial-biology-facility) utilises both CosMx and Xenium technologies. The data is then integrated into MOSAIC: Multi-Origin Spatial transcriptomics Analysis and Integration Core, allowing us to fully leverage spatial biology and facilitate multimodal integration. In the following section, we explain how to use MOSAIC for the data integration and analysis.
 
-## 🎯 Roadmap
-
-### Numerical materials
+### Numerical materials include in MOSAIC
 
 - [Napari v0.4.17](https://github.com/napari/napari/releases/tag/v0.4.17) + CosMx plugin (`napari/napari_CosMx-0.4.17.3-py3-none-any.whl`)
 - CosMx/Xenium conda environment (`env/cosmx.yml`)
@@ -28,11 +26,11 @@ At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/r
 - CosMx/Xenium resegmentation scripts (`src/segmentation/`)
 - CosMx/Xenium analysis codes (`src/analysis/`)
 
-### Integration workflow
+### MOSAIC workflow
 
 ![Workflow](images/sbf_workflow.png)
 
-## Integrating the data step by step
+## 📋 Integrating the data step by step 
 
 ### CosMx
 
@@ -82,7 +80,7 @@ At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/r
 3. You can import and create the `.zarr` object with the Python code `src/qc/Xenium_QC.py`
 4. When the `.zarr` object is created, you can proceed with the QC using the same code as before (`src/qc/Xenium_QC.py`).
 
-## How to use Napari
+## 🔬 How to use Napari 
 
 1. Install Napari 0.4.17.
 2. Launch Napari and open the IPython console (symbol "**>_**").
@@ -109,7 +107,7 @@ At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/r
     - **Layer list**: Manage transcripts, channels, and segmentation.
     - **Layer controls**: Adjust visualisation.
 
-## SpatialData object overview
+## 🗺️ SpatialData object overview 
 
 The **SpatialData** object forms the foundation for analysing spatial omics data.
 
