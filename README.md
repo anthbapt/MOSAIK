@@ -24,7 +24,7 @@ At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/r
 - CosMx/Xenium Reader (`src/reader/`)
 - CosMx/Xenium QC scripts (`src/qc/`)
 - CosMx/Xenium resegmentation scripts (`src/segmentation/`)
-- CosMx Cell composition code (`src/composition/`)
+- CosMx Cell composition code (`tools/composition/`)
 - CosMx/Xenium analysis codes (`src/analysis/`)
 
 ### Integration workflow
@@ -64,10 +64,10 @@ At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/r
 
    Both folders are located in the `RawFiles` directory, under the subfolder named `CellStatsDir`.
 
-8. If the `CellComposite` folder is not present or is unsatisfactory, a new one can be created using the Python script:
+8. If the `CellComposite` folder is not present or is unsatisfactory, a new one can be created using the Python script by specifying the folder that contains the TIF images.:
 
    ```bash
-   python src/composition/make_composite_revised_image.py
+   python tools/make_composite_revised_image.py
    ```
 
 9. When the `flatFiles` folder is ready—i.e., enriched with the `CellComposite`/`Morphology2D` folder and the `CellLabels` folder—you can either run the `CosMx_QC` code or create a Napari visualization (see the section **How to use Napari**).
