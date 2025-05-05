@@ -5,32 +5,38 @@
 # ========================
 import os
 import warnings
+import logging
+logging.basicConfig(level=logging.WARNING)
 warnings.filterwarnings("ignore")
+path = '/Users/k2481276/Documents/CosMx/'
+os.chdir(path)
 
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import skimage.io as skio
 import skimage.measure as skm
+from sbf import visualise_fov
 from skimage.transform import AffineTransform, warp
 
 import spatialdata as sd
 from spatialdata_io import xenium
 import spatialdata_plot
-
 import squidpy as sq
 import scanpy as sc
 
 # ========================
 # Paths & Data Loading
 # ========================
-path = '/Users/k2481276/Documents/SBF_X001'
+path = '/Volumes/Xenium/SBF_X001/'
 zarr_path = "Xenium.zarr"
 os.chdir(path)
 
-# Uncomment below lines if generating zarr for the first time
-# sdata = xenium(path)
-# sdata.write(zarr_path)
+first_run = user_input = input("Is it the first run (0: False, 1: True): ")
+
+if first_run == '1':
+    sdata = xenium(path)
+    sdata.write(zarr_path)
 
 sdata = sd.read_zarr(zarr_path)
 adata = sdata.tables["table"]
@@ -57,16 +63,12 @@ print(f"Negative decoding count % : {cwords}")
 # QC Plots
 # ========================
 fig, axs = plt.subplots(1, 4, figsize=(15, 4))
-
 sns.histplot(adata.obs["total_counts"], kde=False, ax=axs[0])
 axs[0].set_title("Total transcripts per cell")
-
 sns.histplot(adata.obs["n_genes_by_counts"], kde=False, ax=axs[1])
 axs[1].set_title("Unique transcripts per cell")
-
 sns.histplot(adata.obs["cell_area"], kde=False, ax=axs[2])
 axs[2].set_title("Area of segmented cells")
-
 sns.histplot(adata.obs["nucleus_area"] / adata.obs["cell_area"], kde=False, ax=axs[3])
 axs[3].set_title("Nucleus ratio")
 
@@ -74,9 +76,9 @@ axs[3].set_title("Nucleus ratio")
 # Filtering & Normalization
 # ========================
 print(adata.shape)
-sc.pp.filter_cells(adata, min_counts=10)
+sc.pp.filter_cells(adata, min_counts=100)
 print(adata.shape)
-sc.pp.filter_genes(adata, min_cells=5)
+sc.pp.filter_genes(adata, min_cells=500)
 print(adata.shape)
 
 adata.layers["counts"] = adata.X.copy()
@@ -92,9 +94,20 @@ sc.tl.umap(adata)
 sc.tl.leiden(adata)
 
 # UMAP & spatial plots
-sc.pl.umap(adata, color=["total_counts", "n_genes_by_counts", "leiden"], wspace=0.4)
-sq.pl.spatial_scatter(adata, library_id="spatial", shape=None, color=["leiden"], 
-                      wspace=0.4, save="leiden.png", dpi=600)
+sc.pl.umap(adata, color=["total_counts", "n_genes_by_counts", "leiden"], wspace=0.4, save=True)
+
+g = sns.scatterplot(x="x_global_px", y="y_global_px", s=2, marker='.', 
+                    data=adata.obs, hue='leiden', palette = "Set2")
+sns.move_legend(g, "upper left", bbox_to_anchor=(1, 1))
+handles, labels = g.get_legend_handles_labels()
+for h in handles:
+    sizes = h.get_markersize()*8
+    h.set_markersize(sizes)
+plt.legend(handles, labels, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0, ncol=2)
+g.set_ylabel("")
+g.set_xlabel("")
+plt.tight_layout()
+plt.savefig('Sample_display_transcripts_cluster.png', format = 'png', dpi = 600)
 
 # ========================
 # Neighborhood & Centrality Analysis
