@@ -21,10 +21,11 @@ At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/r
 
 - [Napari v0.4.17](https://github.com/napari/napari/releases/tag/v0.4.17) + CosMx plugin (`napari/napari_CosMx-0.4.17.3-py3-none-any.whl`)
 - CosMx/Xenium conda environment (`env/cosmx.yml`)
+- CosMx folder formating and composition images codes (`tools`)
+- Xenium explanation folder (`tools/Xenium_data.xlsx`)
 - CosMx/Xenium Reader (`src/reader/`)
 - CosMx/Xenium QC scripts (`src/qc/`)
 - CosMx/Xenium resegmentation scripts (`src/segmentation/`)
-- CosMx Cell composition code (`tools/composition/`)
 - CosMx/Xenium analysis codes (`src/analysis/`)
 
 ### Integration workflow
