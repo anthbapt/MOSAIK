@@ -138,6 +138,25 @@ For tutorials, see the [spatialdata-napari documentation](https://spatialdata.sc
 
 ![SpatialData Object](images/spatialdata_object.png)
 
+
+## Downstrean Analysis
+
+scverse: 
+xb best practices: 
+
+### Segmentation
+
+sopa
+
+### Cell typing
+tangram
+cell2location
+celltypist
+
+### Domaine identification
+
+### Cell-cell communications
+
 ## 📫 Contact
 
 For any questions, reach out to **Anthony Baptista**: 📧 [anthony.baptista@kcl.ac.uk](mailto:anthony.baptista@kcl.ac.uk)
