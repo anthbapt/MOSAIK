@@ -146,7 +146,9 @@ For tutorials, see the [spatialdata-napari documentation](https://spatialdata.sc
 
 ## Segmentation
 
-* [sopa](https://gustaveroussy.github.io/sopa/)
+| Name       | Released | Documentation | Links |
+| ---------- | -------  | ------------- | ----- |
+| [sopa](https://www.nature.com/articles/s41467-024-48981-z)    | 06/2024 | [<img src="https://brand-guidelines.readthedocs.org/_images/logo-dark.png" width="20">](https://www.celltypist.org) | [<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg" width="20">](https://gustaveroussy.github.io/sopa/) |
 
   
 ## Cell typing
