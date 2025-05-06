@@ -197,12 +197,6 @@ Finally, for a more comprehensive list of spatial transcriptomics tools, please 
 | [DeepTalk](https://www.nature.com/articles/s41467-024-51329-2)    | 08/2024 | [<img src="https://brand-guidelines.readthedocs.org/_images/logo-dark.png" width="20">](https://deeptalk.readthedocs.io/en/latest/index.htmll)  |  [<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg" width="20">](https://github.com/JiangBioLab/DeepTalk) |
 | [NicheCompass](https://www.nature.com/articles/s41588-025-02120-6)    | 03/2025 | [<img src="https://brand-guidelines.readthedocs.org/_images/logo-dark.png" width="20">](https://nichecompass.readthedocs.io/en/latest/)  |  [<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg" width="20">](https://github.com/Lotfollahi-lab/nichecompass/tree/main)|
 
-### Other tools
-
-| Name       | Released | Documentation | Links |
-| ---------- | -------  | ------------- | ----- |
-| [SpaGFT](https://www.nature.com/articles/s41467-024-51590-5)    | 08/2024 | [<img src="https://brand-guidelines.readthedocs.org/_images/logo-dark.png" width="20">](https://spagft.readthedocs.io/en/latest)  |  [<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg" width="20">](https://github.com/OSU-BMBL/SpaGFT)|
-
 
 ## 📫 Contact
 
