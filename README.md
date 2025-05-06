@@ -141,17 +141,18 @@ For tutorials, see the [spatialdata-napari documentation](https://spatialdata.sc
 
 ## Downstrean Analysis
 
-scverse: 
-xb best practices: 
+* [scverse](https://scverse.org/packages/#ecosystem)
+* [xb best practices](https://github.com/Moldia/Xenium_benchmarking)
 
 ### Segmentation
 
-sopa
+* [sopa](https://gustaveroussy.github.io/sopa/)
 
 ### Cell typing
-tangram
-cell2location
-celltypist
+
+* [celltypist](https://www.celltypist.org)
+* [tangram](https://tangram-sc.readthedocs.io/en/latest/)
+* [cell2location](https://cell2location.readthedocs.io/en/latest/)
 
 ### Domaine identification
 
