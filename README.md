@@ -176,7 +176,6 @@ Finally, for a more comprehensive list of spatial transcriptomics tools, please 
 | ---------- | -------  | ------------- | ----- |
 | [SpaOTsc](https://www.nature.com/articles/s41467-020-15968-5)    | 04/2020 | N/A |  [<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg" width="20">](https://github.com/zcang/SpaOTsc) |
 | [SpaGE](https://academic.oup.com/nar/article/48/18/e107/5909530?login=true)   | 09/2020 | N/A |  [<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg" width="20">](https://github.com/tabdelaal/SpaGE) |
-| [novoSpaRc](https://www.nature.com/articles/s41596-021-00573-7)    | 08/2021 | N/A |  [<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg" width="20">](https://github.com/rajewsky-lab/novosparc) |
 | [TANGRAM](https://www.nature.com/articles/s41592-021-01264-7)    | 10/2021 | [<img src="https://brand-guidelines.readthedocs.org/_images/logo-dark.png" width="20">](https://tangram-sc.readthedocs.io/en/latest/) | [<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg" width="20">](https://github.com/broadinstitute/Tangram) |
 
 ### Spatially variable genes
@@ -190,7 +189,6 @@ Finally, for a more comprehensive list of spatial transcriptomics tools, please 
 
 | Name       | Released | Documentation | Links |
 | ---------- | -------  | ------------- | ----- |
-| [CellphoneDB](https://www.nature.com/articles/s41586-018-0698-6)    | 11/2018 | [<img src="https://brand-guidelines.readthedocs.org/_images/logo-dark.png" width="20">](https://www.cellphonedb.org)  |  [<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg" width="20">](https://github.com/ventolab/CellphoneDB)|
 | [NCEM](https://www.nature.com/articles/s41587-022-01467-z)    | 10/2022 | [<img src="https://brand-guidelines.readthedocs.org/_images/logo-dark.png" width="20">](https://ncem.readthedocs.io/en/latest/)  |  [<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg" width="20">](https://github.com/theislab/ncem)|
 | [COMMOT](https://www.nature.com/articles/s41592-022-01728-4)    | 01/2023 | [<img src="https://brand-guidelines.readthedocs.org/_images/logo-dark.png" width="20">](https://commot.readthedocs.io/en/latest/index.html)  |  [<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg" width="20">](https://github.com/zcang/COMMOT)|
 | [FlowSig](https://www.nature.com/articles/s41592-024-02380-w)    | 08/2024 | N/A  |  [<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg" width="20">](https://github.com/axelalmet/flowsig)|
