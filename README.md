@@ -141,8 +141,11 @@ For tutorials, see the [spatialdata-napari documentation](https://spatialdata.sc
 
 # Downstream analysis
 
-* [scverse](https://scverse.org/packages/#ecosystem)
-* [xb best practices](https://github.com/Moldia/Xenium_benchmarking)
+Working with a **SpatialData** object enables seamless integration with many tools from the [scverse](https://scverse.org/packages/#ecosystem)  ecosystem. We highly recommend using this ecosystem to contribute to the broader community in an interoperable and standardised way.
+  
+We also recommend the following benchmark for Xenium user: [Xenium best practices](https://github.com/Moldia/Xenium_benchmarking)
+
+Finally, for a more comprehensive list of spatial transcriptomics tools, please visit our Github page: [Spatial-Biology-Tools](https://github.com/anthbapt/Spatial-Biology-Tools/tree/main) 
 
 ## Segmentation
 
@@ -199,7 +202,6 @@ For tutorials, see the [spatialdata-napari documentation](https://spatialdata.sc
 | Name       | Released | Documentation | Links |
 | ---------- | -------  | ------------- | ----- |
 | [SpaGFT](https://www.nature.com/articles/s41467-024-51590-5)    | 08/2024 | [<img src="https://brand-guidelines.readthedocs.org/_images/logo-dark.png" width="20">](https://spagft.readthedocs.io/en/latest)  |  [<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg" width="20">](https://github.com/OSU-BMBL/SpaGFT)|
-
 
 
 ## 📫 Contact
