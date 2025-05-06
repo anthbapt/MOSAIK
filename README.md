@@ -150,13 +150,40 @@ For tutorials, see the [spatialdata-napari documentation](https://spatialdata.sc
 
 ### Cell typing
 
-* [celltypist](https://www.celltypist.org)
-* [tangram](https://tangram-sc.readthedocs.io/en/latest/)
+* [cellTypist](https://www.celltypist.org)
+* [TANGRAM](https://tangram-sc.readthedocs.io/en/latest/)
 * [cell2location](https://cell2location.readthedocs.io/en/latest/)
 
 ### Domaine identification
 
+* [STAGATE](https://stagate.readthedocs.io/en/latest/index.html)
+* [SpaGCN](https://github.com/jianhuupenn/SpaGCN)
+* [Banksy](https://github.com/prabhakarlab/Banksy_py)
+
+### Genes imputation
+
+* [TANGRAM](https://tangram-sc.readthedocs.io/en/latest/)
+* [SpaOTsc](https://github.com/zcang/SpaOTsc)
+* [SpaGE](https://github.com/tabdelaal/SpaGE)
+* [novoSpaRc](https://github.com/rajewsky-lab/novosparc)
+
+### Spatially variable genes
+
+* [SpatialDE](https://github.com/Teichlab/SpatialDE)
+* [SINFONIA](https://github.com/BioX-NKU/SINFONIA)
+
 ### Cell-cell communications
+
+* [DeepTalk](https://github.com/JiangBioLab/DeepTalk)
+* [NicheCompass](https://nichecompass.readthedocs.io/en/latest/)
+* [COMMOT](https://github.com/zcang/COMMOT)
+* [CellphoneDB](https://github.com/ventolab/CellphoneDB)
+* [NCEM](https://github.com/theislab/ncem)
+* [FlowSig](https://github.com/axelalmet/flowsig)
+
+### Other tools
+
+* [SpaGFT](https://github.com/OSU-BMBL/SpaGFT)
 
 ## 📫 Contact
 
