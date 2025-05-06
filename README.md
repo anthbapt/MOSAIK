@@ -139,7 +139,7 @@ For tutorials, see the [spatialdata-napari documentation](https://spatialdata.sc
 ![SpatialData Object](images/spatialdata_object.png)
 
 
-## Downstrean Analysis
+## Downstream analysis
 
 * [scverse](https://scverse.org/packages/#ecosystem)
 * [xb best practices](https://github.com/Moldia/Xenium_benchmarking)
