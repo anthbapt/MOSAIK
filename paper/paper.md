@@ -56,7 +56,7 @@ Adding another figure with **Images**, **Shapes**, **Labels**, **Points** for bo
 
 # Related software
 
-spatialdata, sopa, squidpy, scanpy, scverse
+This work integrates nicely with the existing spatial transcriptomics community, particularly the tools that are part of the scverse ecosystem. To this end, we have created a GitHub repository ([Spatial-Biology-Tools](https://github.com/anthbapt/Spatial-Biology-Tools/tree/main) where we collect Python tools that may be useful after using or integrating with our workflow. Our integration workflow ultimately aims to take users from raw data to specific applications seamlessly, leveraging a unified framework defined by the community.
 
 # Planned Enhancements
 include cell typing benchmark, segmentation benchmark and a new method based on foundation models (micro-SAM, cellSAM), cell-cell communication analysis, seamless multi-modal integration with H&E, Akoya PhenoCycler, IMC.
