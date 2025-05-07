@@ -82,7 +82,7 @@ At the Spatial Biology Facility, we have developed **MOSAIC** (Multi-Origin Spat
 
 ## 🔬 How to use Napari 
 
-1. Install Napari 0.4.17.
+1. Install [Napari 0.4.17](https://github.com/napari/napari/releases/tag/v0.4.17).
 2. Launch Napari and open the IPython console (symbol "**>_**").
 3. Install the CosMx plugin:
 
