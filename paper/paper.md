@@ -39,25 +39,39 @@ This integrated and consistent pipeline provides a foundation for downstream mod
 
 # Overview of the workflow
 
-- [Napari v0.4.17](https://github.com/napari/napari/releases/tag/v0.4.17) + CosMx plugin (`napari/napari_CosMx-0.4.17.3-py3-none-any.whl`)
-- CosMx/Xenium conda environment (`env/cosmx.yml`)
-- CosMx/Xenium Reader (`src/reader/`)
-- CosMx/Xenium QC scripts (`src/qc/`)
-- CosMx/Xenium resegmentation scripts (`src/segmentation/`)
-- CosMx Cell composition code (`src/composition/`)
-- CosMx/Xenium analysis codes (`src/analysis/`)
+
+The MOSAIC workflow supports both CosMx and Xenium spatial transcriptomics platforms through modular pipelines designed for data integration, visualization, and analysis (Fig. 1). For CosMx, data are first exported from the AtoMx platform, including all Flat Files and relevant Raw Files such as Morphology2D. These files are uncompressed and organized using helper scripts to generate structured directories (e.g., CellComposite, CellLabels) essential for downstream processing.
+
+Structured inputs are then read into the analysis pipeline using a custom reader, which extends the spatialdata_io framework to incorporate various image types along with cell shape annotations (polygons). The resulting .zarr object is processed using Python-based tools such as squidpy and spatialdata for quality control and downstream analyses—including resegmentation, cell typing, niche identification, and cell-cell communication. An associated GitHub repository documents the workflow and lists compatible Python tools that support the spatialdata object format.
+
+CosMx data can also be visualized using Napari with the CosMx plugin, enabling interactive quality control of segmentations, marker expressions, and transcript distributions.
+
+Xenium data follow a similar pipeline. Data are exported directly from the instrument, processed through the same reader, and converted into a .zarr object. This unified format is then analyzed using the same set of Python tools, ensuring consistency across platforms.
 
 ![Workflow](figures/Figure1.png)
 
+MOSAIC is the first fully integrated end-to-end workflow that supports both CosMx and Xenium raw data, standardizing their output into a unified spatial data format (Fig. 2). The entire process is thoroughly documented in the GitHub repository, which includes two example workflows: one using a publicly available CosMx dataset from the NanoString website, and another using a Xenium dataset from the 10x Genomics platform.
+
 ![Example](figures/Figure2.png)
 
+# Data availaility
+
+The datasets used to generate the figures are publicly available at the following websites: [CosMx](https://nanostring.com/products/cosmx-spatial-molecular-imager/ffpe-dataset/cosmx-smi-mouse-brain-ffpe-dataset/) and [Xenium](https://www.10xgenomics.com/datasets/xenium-prime-ffpe-human-skin). The processed datasets associated with the code are provided as examples.
+
+# Code availaility
+
+The MOSAIC workflow is publicly available on GitHub at [https://github.com/anthbapt/MOSAIC](https://github.com/anthbapt/MOSAIC/tree/main).
 
 # Related software
 
-This work integrates nicely with the existing spatial transcriptomics community, particularly the tools that are part of the scverse ecosystem. To this end, we have created a GitHub repository ([Spatial-Biology-Tools](https://github.com/anthbapt/Spatial-Biology-Tools/tree/main) where we collect Python tools that may be useful after using or integrating with our workflow. Our integration workflow ultimately aims to take users from raw data to specific applications seamlessly, leveraging a unified framework defined by the community.
+This work integrates nicely with the existing spatial transcriptomics community, particularly the tools that are part of the scverse ecosystem. To this end, we have created a GitHub repository ([https://github.com/anthbapt/Spatial-Biology-Tools](https://github.com/anthbapt/Spatial-Biology-Tools/tree/main) where we collect Python tools that may be useful after using or integrating with our workflow. Our integration workflow ultimately aims to take users from raw data to specific applications seamlessly, leveraging a unified framework defined by the community.
 
 # Planned Enhancements
-include cell typing benchmark, segmentation benchmark and a new method based on foundation models (micro-SAM, cellSAM), cell-cell communication analysis, seamless multi-modal integration with H&E, Akoya PhenoCycler, IMC.
+Recognising that spatial transcriptomics is a rapidly evolving field, MOSAIC is designed to remain aligned with the latest standards, both in terms of experimental setup and raw data processing, as well as on the computational side by integrating emerging methods and developmental tools. As part of the King's College London Spatial Biology Facility (SBF), MOSAIC must stay up to date to help the SBF fulfill its mission.
+
+Furthermore, newly developed tools within the group will be directly integrated into MOSAIC. This will provide the broader community with the ability to use both their own methods and those developed by our team, methods that have been tested across a wide range of tissue types and technologies, thanks to the strong network surrounding the facility.
+
+The tools that will be natively integrated into MOSAIC include segmentation methods based on SAM, as well as a multimodal integration approach that combines transcriptomic and spatial information to generate a more robust latent representation. The current modalities under consideration include H&E, Akoya PhenoCycler, IMC, and metallomics data.
 
 # Acknowledgements
 Anthony Baptista acknowledges support from the CRUK City of London Centre Award CTRQQR-2021100004.
