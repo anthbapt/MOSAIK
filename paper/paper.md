@@ -44,14 +44,9 @@ This integrated and consistent pipeline provides a foundation for downstream mod
 - CosMx Cell composition code (`src/composition/`)
 - CosMx/Xenium analysis codes (`src/analysis/`)
 
-![Workflow](figures/sbf_workflow.png)
+![Workflow](figures/Figure1.png)
 
-Adding another figure with **Images**, **Shapes**, **Labels**, **Points** for both CosMx and Xenium, as follows:
-
-| Technology | Images         | Shapes | Labels | Points |
-|------------|----------------|--------|--------|--------|
-| CosMx      |      xxx       | xxx    | xxx    | xxx    |
-| Xenium     |      xxx       | xxx    | xxx    | xxx    |
+![Example](figures/Figure2.png)
 
 
 # Related software
