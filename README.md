@@ -4,16 +4,21 @@
   <img src="images/sbf_logo.png" width="210px">
 </p>
 
-# Spatial Biology Facility at King's College London
-
-At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/research/facilities/the-spatial-biology-facility) utilises both CosMx and Xenium technologies.
+# MOSAIC
 
 ## 📝 Introduction  
 <p align="center">
   <img src="images/mosaic.jpg" width="150px">
 </p>
 
-At the Spatial Biology Facility, we have developed **MOSAIC** (Multi-Origin Spatial Transcriptomics Analysis and Integration Core) to fully leverage the power of spatial biology and enable seamless multimodal integration. MOSAIC is a dynamic, evolving workflow designed to adapt to the latest versions of key platform providers, including 10X Genomics and NanoString, while staying aligned with emerging trends in the spatial biology community. In the following section, we will walk you through the process of using MOSAIC for data integration and analysis
+At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/research/facilities/the-spatial-biology-facility) utilises both CosMx and Xenium technologies. We have identified a gap in the integration of spatial transcriptomics data, from raw output to Python-compatible formats, regardless of whether the data originates from 10X Xenium or NanoString CosMx instruments.
+
+To address this, we have developed **MOSAIC** (Multi-Origin Spatial Transcriptomics Analysis and Integration Core): a dynamic, evolving workflow designed to fully harness the power of spatial biology and support seamless multimodal integration.
+
+MOSAIC is built to adapt to the latest versions of key platform providers, including 10X Genomics and NanoString, while staying aligned with emerging trends in the spatial biology community.
+
+In the following section, we will guide you through the process of using MOSAIC for data integration and analysis.
+
 
 ### Numerical materials include in MOSAIC
 
