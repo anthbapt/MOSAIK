@@ -49,7 +49,7 @@ Xenium data follow a similar pipeline. Data are exported directly from the instr
 
 <figure>
   <img src="figures/Figure1.png" alt="Alt text">
-  <figcaption>Figure 1: Workflow.</figcaption>
+  <figcaption>Figure 1: The MOSAIC workflow is associated with two visualization strategies: On one hand, Napari with the CosMx plugin to visualize Nanostring CosMx data; on the other hand, Xenium Explorer for 10X Xenium data. MOSAIC takes the raw data and converts it into a Python object, making it easy to perform quality control and facilitate downstream analysis.</figcaption>
 </figure>
 
 ---
@@ -60,7 +60,7 @@ MOSAIC is the first fully integrated end-to-end workflow that supports both CosM
 
 <figure>
   <img src="figures/Figure2.png" alt="Alt text">
-  <figcaption>Figure 2: Example.</figcaption>
+  <figcaption>Figure 2: The Python SpatialData object obtained after using the MOSAIC workflow embeds both CosMx and Xenium data into similar objects, which can be combined or compared. MOSAIC, along with the Python library spatialdata, allows for the visualization and connection of SpatialElements: Images (e.g., H&E or immunofluorescence stains), Labels (segmentation maps), Points (i.e., transcripts), and Shapes (e.g., cell/nucleus boundaries or ROIs). Both CosMx and Xenium data are sourced from public repositories (see the Data Availability section). </figcaption>
 </figure>
 
 ---
