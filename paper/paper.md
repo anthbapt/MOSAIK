@@ -50,8 +50,6 @@ Xenium data follow a similar pipeline. Data are exported directly from the instr
   <figcaption>Figure 1: Workflow.</figcaption>
 </figure>
 
-![Workflow](figures/Figure1.png)
-
 MOSAIC is the first fully integrated end-to-end workflow that supports both CosMx and Xenium raw data, standardising their output into a unified spatial data format (Fig. 2). The entire process is thoroughly documented in the GitHub repository, which includes two example workflows: one using a publicly available CosMx dataset from the NanoString website, and another using a Xenium dataset from the 10x Genomics platform.
 
 <figure>
