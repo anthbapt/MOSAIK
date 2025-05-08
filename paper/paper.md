@@ -32,7 +32,6 @@ Despite the promise of spatial transcriptomics, significant technical challenges
 
 To address the first challenge, we have developed a unified workflow that supports both CosMx and Xenium data. While Xenium data align relatively well, CosMx data lacked robust tooling, which we have now integrated into a seamless and consistent pipeline. Moreover, we developped this workflow by using the most suitable Python package spatialData library [@Marconato2025], which provide a suitable object to integrate both the spatial elements (images, space location of transcripts, cell segmentaton labels, cell segmentation polygons) and transcriptomics information, which is an annotated datframe which defines single-cell transcriptomics.
 
-
 Addressing the second challenge requires precise spatial delineation of cells—making cell segmentation a critical first step. Segmentation quality directly impacts the accuracy of all downstream analyses. Our current workflow integrates native segmentation approaches: CosMx uses a Cellpose-based method [@Stringer2021], and Xenium applies a Voronoi expansion strategy. However, users can also opt for alternative or custom segmentation tools, which may offer better performance but require careful parameter tuning—often difficult to implement in tools like Xenium Ranger (10x Genomics) or AtoMx (NanoString).
 
 This integrated and consistent pipeline provides a foundation for downstream modeling and analytical functions, and it offers a scalable solution for tackling key challenges in spatial transcriptomics—particularly in the context of multimodal data integration.
@@ -56,7 +55,7 @@ MOSAIC is the first fully integrated end-to-end workflow that supports both CosM
 
 # Data availaility
 
-The datasets used to generate the figures are publicly available at the following websites: [CosMx](https://nanostring.com/products/cosmx-spatial-molecular-imager/ffpe-dataset/cosmx-smi-mouse-brain-ffpe-dataset/) and [Xenium](https://www.10xgenomics.com/datasets/xenium-prime-ffpe-human-skin). The processed datasets associated with the code are provided as examples.
+The datasets used to generate the figures are publicly available at the following websites: [https://nanostring.com/ffpe-dataset/cosmx-smi-mouse-brain-ffpe-dataset/](https://nanostring.com/products/cosmx-spatial-molecular-imager/ffpe-dataset/cosmx-smi-mouse-brain-ffpe-dataset/) and [https://www.10xgenomics.com/datasets/xenium-prime-ffpe-human-skin](https://www.10xgenomics.com/datasets/xenium-prime-ffpe-human-skin). The processed datasets associated with the code are provided as examples.
 
 # Code availaility
 
@@ -64,7 +63,7 @@ The MOSAIC workflow is publicly available on GitHub at [https://github.com/anthb
 
 # Related software
 
-This work integrates nicely with the existing spatial transcriptomics community, particularly the tools that are part of the scverse ecosystem. To this end, we have created a GitHub repository ([https://github.com/anthbapt/Spatial-Biology-Tools](https://github.com/anthbapt/Spatial-Biology-Tools/tree/main) where we collect Python tools that may be useful after using or integrating with our workflow. Our integration workflow ultimately aims to take users from raw data to specific applications seamlessly, leveraging a unified framework defined by the community.
+This work integrates nicely with the existing spatial transcriptomics community, particularly the tools that are part of the scverse ecosystem. To this end, we have created a GitHub repository ([https://github.com/anthbapt/Spatial-Biology-Tools](https://github.com/anthbapt/Spatial-Biology-Tools/tree/main)) where we collect Python tools that may be useful after using or integrating with our workflow. Our integration workflow ultimately aims to take users from raw data to specific applications seamlessly, leveraging a unified framework defined by the community.
 
 # Planned Enhancements
 Recognising that spatial transcriptomics is a rapidly evolving field, MOSAIC is designed to remain aligned with the latest standards, both in terms of experimental setup and raw data processing, as well as on the computational side by integrating emerging methods and developmental tools. As part of the King's College London Spatial Biology Facility (SBF), MOSAIC must stay up to date to help the SBF fulfill its mission.
