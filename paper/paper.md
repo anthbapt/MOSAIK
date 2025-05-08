@@ -17,7 +17,7 @@ affiliations:
    index: 1
  - name: The Alan Turing Institute, The British Library, London, NW1 2DB, United Kingdom.
    index: 2
-date: 29 April 2024
+date: 08 May 2025
 bibliography: bibliography.bib
 ---
 # Summary
@@ -45,17 +45,25 @@ CosMx data can also be visualised using Napari with the CosMx plugin, enabling i
 
 Xenium data follow a similar pipeline. Data are exported directly from the instrument, processed through the same reader, and converted into a .zarr object. This unified format is then analysed using the same set of Python tools, ensuring consistency across platforms.
 
+---
+
 <figure>
   <img src="figures/Figure1.png" alt="Alt text">
   <figcaption>Figure 1: Workflow.</figcaption>
 </figure>
 
+---
+
 MOSAIC is the first fully integrated end-to-end workflow that supports both CosMx and Xenium raw data, standardising their output into a unified spatial data format (Fig. 2). The entire process is thoroughly documented in the GitHub repository, which includes two example workflows: one using a publicly available CosMx dataset from the NanoString website, and another using a Xenium dataset from the 10x Genomics platform.
+
+---
 
 <figure>
   <img src="figures/Figure2.png" alt="Alt text">
   <figcaption>Figure 2: Example.</figcaption>
 </figure>
+
+---
 
 Finally, we have created a GitHub repository ([https://github.com/anthbapt/Spatial-Biology-Tools](https://github.com/anthbapt/Spatial-Biology-Tools/tree/main)) that compiles a collection of Python tools designed to be used alongside or after integration with our workflow. These tools support a wide range of applications, including segmentation, cell typing, domain identification, gene imputation, detection of spatially variable genes, cell-cell communication analysis, dimensionality reduction, multimodal integration, and the use of foundation models, among others. By providing this curated collection, our goal is to guide users seamlessly from raw data to advanced analytical applications, all within a unified and community-supported framework.
 
