@@ -66,7 +66,7 @@ The MOSAIC workflow is publicly available on GitHub at [https://github.com/anthb
 
 # Related software
 
-This work integrates nicely with the existing spatial transcriptomics community, particularly the tools that are part of the scverse ecosystem. 
+This work integrates nicely with the existing spatial transcriptomics community, particularly the tools that are part of the [scverse ecosystem](https://scverse.org). 
 
 # Planned Enhancements
 Recognising that spatial transcriptomics is a rapidly evolving field, MOSAIC is designed to remain aligned with the latest standards, both in terms of experimental setup and raw data processing, as well as on the computational side by integrating emerging methods and developmental tools. As part of the King's College London Spatial Biology Facility (SBF), MOSAIC must stay up to date to help the SBF fulfill its mission.
