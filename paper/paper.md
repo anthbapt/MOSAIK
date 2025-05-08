@@ -9,6 +9,9 @@ authors:
   - name: Anthony Baptista
     orcid: 0000-0002-8514-0250
     affiliation: "1, 2"
+  - name: Anita Grigoriadis
+    orcid: 0000-0003-3434-201X
+    affiliation: "1"
 affiliations:
  - name: Cancer Bioinformatics, School of Cancer & Pharmaceutical Sciences, Faculty of Life Sciences and Medicine, King's College London, London, United Kingdom
    index: 1
