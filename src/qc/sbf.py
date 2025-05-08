@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from spatialdata.transformations import Affine, set_transformation
+from spatialdata import bounding_box_query
 import matplotlib.pyplot as plt
 import spatialdata as sd
 import spatialdata_plot
 import seaborn as sns
 import scanpy as sc
 import pandas as pd
+
 
 def flipping_local_coordinate(sdata, fov, show=True):
     """
@@ -55,7 +57,7 @@ def flipping_local_coordinate(sdata, fov, show=True):
         sdata.pl.render_points(fov + "_points").pl.show(coordinate_systems=[fov])
 
 
-def visualise_fov(sdata, coordinate='global'):
+def visualise_fov(sdata, fov, coordinate='global'):
     """
     Visualizes the field of view (FOV) data in either the global or local coordinate system.
 
@@ -77,18 +79,96 @@ def visualise_fov(sdata, coordinate='global'):
     Example:
         visualise_fov(sdata, coordinate='local')
     """
+    
+    if isinstance(fov, int):
+        fov = str(fov)
+
+    fig, ax = plt.subplots(1, 4, figsize=(16, 4))    
 
     if coordinate == "global":
-        sdata.pl.render_images("global_image").pl.show(coordinate_systems="global")
-        sdata.pl.render_labels("global_labels").pl.show(coordinate_systems="global")
-        sdata.pl.render_points("global_points").pl.show(coordinate_systems="global")
-        sdata.pl.render_shapes("global_shapes").pl.show(coordinate_systems="global")
-
+        ax[0].tick_params(left=False, bottom=False, labelleft=False, labelbottom=False)
+        sdata.pl.render_images(fov + "_image").pl.show(coordinate_systems="global", title="Images", dpi = 600, ax=ax[0])
+        ax[1].tick_params(left=False, bottom=False, labelleft=False, labelbottom=False)
+        sdata.pl.render_labels(fov + "_labels").pl.show(coordinate_systems="global", title="Labels", dpi = 600, ax=ax[1])
+        ax[2].tick_params(left=False, bottom=False, labelleft=False, labelbottom=False)
+        sdata.pl.render_points(fov + "_points", size = 0.0001).pl.show(coordinate_systems="global", title="Points", dpi = 600, ax=ax[2])
+        ax[3].tick_params(left=False, bottom=False, labelleft=False, labelbottom=False)
+        sdata.pl.render_shapes(fov + "_shapes", scale=0.9).pl.show(coordinate_systems="global", title="Shapes", dpi = 600, ax=ax[3])
+        plt.savefig('CosMx.png', format = 'png', dpi = 600)
+        
     elif coordinate == "local":
-        sdata.pl.render_images("local_image").pl.show(coordinate_systems="local")
-        sdata.pl.render_labels("local_labels").pl.show(coordinate_systems="local")
-        sdata.pl.render_points("local_points").pl.show(coordinate_systems="local")
-        sdata.pl.render_shapes("local_shapes").pl.show(coordinate_systems="local")
+        ax[0].tick_params(left=False, bottom=False, labelleft=False, labelbottom=False)
+        sdata.pl.render_images(fov + "_image").pl.show(coordinate_systems=fov, title="Images", dpi = 600, ax=ax[0])
+        ax[1].tick_params(left=False, bottom=False, labelleft=False, labelbottom=False)
+        sdata.pl.render_labels(fov + "_labels").pl.show(coordinate_systems=fov, title="Labels", dpi = 600, ax=ax[1])
+        ax[2].tick_params(left=False, bottom=False, labelleft=False, labelbottom=False)
+        sdata.pl.render_points(fov + "_points", size = 0.0001).pl.show(coordinate_systems=fov, title="Points", dpi = 600, ax=ax[2])
+        ax[3].tick_params(left=False, bottom=False, labelleft=False, labelbottom=False)
+        sdata.pl.render_shapes(fov + "_shapes", scale=0.9).pl.show(coordinate_systems=fov, title="Shapes", dpi = 600, ax=ax[3])
+        plt.savefig('CosMx.png', format = 'png', dpi = 600)
 
     else:
         raise ValueError("`coordinate` must be either 'global' or 'local'.")
+        
+        
+def crop(x, min_co, max_co):
+    """
+   Crops a spatial object to a specified bounding box.
+
+   Applies a bounding box query on the input `x`, limiting the data to the given 
+   minimum and maximum coordinates along the x and y axes in the global coordinate system.
+
+   Args:
+       x: The spatial data object to be cropped. This is typically a SpatialData 
+          object or any compatible format supported by `bounding_box_query`.
+       min_co: The minimum coordinate (e.g., tuple or list) defining one corner of 
+               the bounding box in the format (x_min, y_min).
+       max_co: The maximum coordinate (e.g., tuple or list) defining the opposite 
+               corner of the bounding box in the format (x_max, y_max).
+
+   Returns:
+       A spatial data object cropped to the specified bounding box.
+
+   """
+   
+    return bounding_box_query(x, min_coordinate=min_co,
+                              max_coordinate=max_co, axes=("x", "y"),
+                              target_coordinate_system="global")    
+    
+def visualise_crop(sdata, min_co, max_co):
+    """
+    Visualizes a cropped region of spatial data across multiple modalities.
+
+    This function generates a 1x4 subplot showing the output of four different
+    spatial data layers: morphology images, cell labels, transcript points, and
+    cell boundaries. The visualized region is defined by a bounding box specified
+    by `min_co` and `max_co`.
+
+    Args:
+        sdata: A `SpatialData` object containing spatial transcriptomics data and 
+               associated modalities (e.g., images, labels, points, shapes).
+        min_co: The minimum coordinate (e.g., tuple or list) for cropping, 
+                typically in the format (x_min, y_min).
+        max_co: The maximum coordinate (e.g., tuple or list) for cropping, 
+                typically in the format (x_max, y_max).
+
+    Returns:
+        None. The function displays the plots and saves them as 'Xenium.png'.
+
+    Side Effects:
+        - Displays a matplotlib figure with 4 subplots.
+        - Saves the figure as a PNG file named 'Xenium.png' in the current directory.
+
+    """
+
+    fig, ax = plt.subplots(1, 4, figsize=(16, 4))    
+
+    ax[0].tick_params(left=False, bottom=False, labelleft=False, labelbottom=False)
+    crop(sdata, min_co, max_co).pl.render_images("morphology_focus").pl.show(coordinate_systems="global", title="Images", dpi = 600, ax=ax[0])
+    ax[1].tick_params(left=False, bottom=False, labelleft=False, labelbottom=False)
+    crop(sdata, min_co, max_co).pl.render_labels("cell_labels").pl.show(coordinate_systems="global", title="Labels", dpi = 600, ax=ax[1])
+    ax[2].tick_params(left=False, bottom=False, labelleft=False, labelbottom=False)
+    crop(sdata, min_co, max_co).pl.render_points("transcripts", size = 0.00001).pl.show(coordinate_systems="global", title="Points", dpi = 600, ax=ax[2])
+    ax[3].tick_params(left=False, bottom=False, labelleft=False, labelbottom=False)
+    crop(sdata, min_co, max_co).pl.render_shapes("cell_boundaries", scale=0.9).pl.show(coordinate_systems="global", title="Shapes", dpi = 600, ax=ax[3])
+    plt.savefig('Xenium.png', format = 'png', dpi = 600)
