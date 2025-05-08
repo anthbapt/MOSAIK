@@ -66,10 +66,8 @@ def cosmx(
     # tries to infer dataset_id from the name of the counts file
     if dataset_id is None:
         counts_files = [f for f in os.listdir(path) if str(f).endswith(CosmxKeys.COUNTS_SUFFIX)]
-        
         if len(counts_files) == 1:
             found = re.match(rf"(.*)_{CosmxKeys.COUNTS_SUFFIX}", counts_files[0])
-            
             if found:
                 dataset_id = found.group(1)
                 
@@ -142,10 +140,15 @@ def cosmx(
         instance_key=CosmxKeys.INSTANCE_KEY.value)
 
     fovs_counts = list(map(str, adata.obs.fov.astype(int).unique()))
-
+    # we remove all the FOV that contain only one transcripts, because we cannot
+    # determine the transfromation based on one pair of coordinate
+    my_dict = Counter(obs['fov'])
+    keys_with_value = [k for k, v in my_dict.items() if v == 1]
+    fovs_counts = sorted(list(set(fovs_counts) - set(keys_with_value)))
     affine_transforms_to_global = {}
-
+    
     for fov in fovs_counts:
+
         idx = table.obs.fov.astype(str) == fov
         loc = table[idx, :].obs[[CosmxKeys.X_LOCAL_CELL, CosmxKeys.Y_LOCAL_CELL]].values
         glob = table[idx, :].obs[[CosmxKeys.X_GLOBAL_CELL, CosmxKeys.Y_GLOBAL_CELL]].values
