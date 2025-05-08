@@ -55,6 +55,10 @@ if first_run == '1':
     polygon_df.to_csv(path + slide + '/' + polygon, index = False)
     
         
+    # Depending on the version of AtoMx, you may need to flip the images
+    # to correctly align cells and transcripts. In the latest version of AtoMx,
+    # this issue has been fixed. However, for the publicly available dataset we used,
+    # flipping is still required, so we set the argument `flip_image` to True.
     sdata = cosmx.cosmx(path + slide, flip_image = True)
     sdata.write(zarr_path)    
 
