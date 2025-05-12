@@ -13,7 +13,7 @@
 
 At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/research/facilities/the-spatial-biology-facility) utilises both CosMx and Xenium technologies. We have identified a gap in the integration of spatial transcriptomics data, from raw output to Python-compatible formats, regardless of whether the data originates from 10X Xenium or NanoString CosMx instruments.
 
-To address this, we have developed **MOSAIK** (Multi-Origin Spatial Transcriptomics Analysis and Integration Core): a dynamic, evolving workflow designed to fully harness the power of spatial biology and support seamless multimodal integration.
+To address this, we have developed **MOSAIK** (Multi-Origin Spatial Transcriptomics Analysis and Integration Kit): a dynamic, evolving workflow designed to fully harness the power of spatial biology and support seamless multimodal integration.
 
 MOSAIK is built to adapt to the latest versions of key platform providers, including 10X Genomics and NanoString, while staying aligned with emerging trends in the spatial biology community.
 
