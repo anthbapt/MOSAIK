@@ -4,23 +4,23 @@
   <img src="images/sbf_logo.png" width="210px">
 </p>
 
-# MOSAIC
+# MOSAIK
 
 ## 📝 Introduction  
 <p align="center">
-  <img src="images/mosaic.jpg" width="150px">
+  <img src="images/MOSAIK.jpg" width="150px">
 </p>
 
 At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/research/facilities/the-spatial-biology-facility) utilises both CosMx and Xenium technologies. We have identified a gap in the integration of spatial transcriptomics data, from raw output to Python-compatible formats, regardless of whether the data originates from 10X Xenium or NanoString CosMx instruments.
 
-To address this, we have developed **MOSAIC** (Multi-Origin Spatial Transcriptomics Analysis and Integration Core): a dynamic, evolving workflow designed to fully harness the power of spatial biology and support seamless multimodal integration.
+To address this, we have developed **MOSAIK** (Multi-Origin Spatial Transcriptomics Analysis and Integration Core): a dynamic, evolving workflow designed to fully harness the power of spatial biology and support seamless multimodal integration.
 
-MOSAIC is built to adapt to the latest versions of key platform providers, including 10X Genomics and NanoString, while staying aligned with emerging trends in the spatial biology community.
+MOSAIK is built to adapt to the latest versions of key platform providers, including 10X Genomics and NanoString, while staying aligned with emerging trends in the spatial biology community.
 
-In the following section, we will guide you through the process of using MOSAIC for data integration and analysis.
+In the following section, we will guide you through the process of using MOSAIK for data integration and analysis.
 
 
-### Numerical materials include in MOSAIC
+### Numerical materials include in MOSAIK
 
 - [Napari v0.4.17](https://github.com/napari/napari/releases/tag/v0.4.17) + CosMx plugin (`napari/napari_CosMx-0.4.17.3-py3-none-any.whl`)
 - CosMx/Xenium conda environment (`env/cosmx.yml`)
@@ -31,7 +31,7 @@ In the following section, we will guide you through the process of using MOSAIC 
 - CosMx/Xenium resegmentation scripts (`src/segmentation/`)
 - CosMx/Xenium analysis codes (`src/analysis/`)
 
-### MOSAIC workflow
+### MOSAIK workflow
 
 ![Workflow](images/sbf_workflow.png)
 
