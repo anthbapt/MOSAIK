@@ -8,7 +8,7 @@
 
 ## 📝 Introduction  
 <p align="center">
-  <img src="images/MOSAIK.jpg" width="150px">
+  <img src="images/logo.ong" width="150px">
 </p>
 
 At King's College London, the [Spatial Biology Facility](https://www.kcl.ac.uk/research/facilities/the-spatial-biology-facility) utilises both CosMx and Xenium technologies. We have identified a gap in the integration of spatial transcriptomics data, from raw output to Python-compatible formats, regardless of whether the data originates from 10X Xenium or NanoString CosMx instruments.
