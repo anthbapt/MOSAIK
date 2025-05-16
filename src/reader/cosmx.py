@@ -1,3 +1,4 @@
+# This code is an extension of the readers from https://github.com/scverse/spatialdata-io/tree/main
 import os
 import re
 import tempfile
