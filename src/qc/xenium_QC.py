@@ -74,44 +74,44 @@ axs[3].set_title("Nucleus ratio")
 
 # ========================
 # Filtering & Normalization
-# # ========================
-# print("Original dimension: ", adata.shape)
-# sc.pp.filter_cells(adata, min_counts = 100)
-# print("Dimension after filtering cells: ", adata.shape)
-# sc.pp.filter_genes(adata, min_cells = 100)
-# print("Dimension after filtering genes: ", adata.shape)
+# ========================
+print("Original dimension: ", adata.shape)
+sc.pp.filter_cells(adata, min_counts = 100)
+print("Dimension after filtering cells: ", adata.shape)
+sc.pp.filter_genes(adata, min_cells = 100)
+print("Dimension after filtering genes: ", adata.shape)
 
 
-# adata.layers["counts"] = adata.X.copy()
-# sc.pp.normalize_total(adata, inplace=True)
-# sc.pp.log1p(adata)
+adata.layers["counts"] = adata.X.copy()
+sc.pp.normalize_total(adata, inplace=True)
+sc.pp.log1p(adata)
 
-# # ========================
-# # Dimensionality Reduction & Clustering
-# # ========================
-# sc.pp.pca(adata)
-# sc.pp.neighbors(adata)
-# sc.tl.umap(adata)
-# sc.tl.leiden(adata)
+# ========================
+# Dimensionality Reduction & Clustering
+# ========================
+sc.pp.pca(adata)
+sc.pp.neighbors(adata)
+sc.tl.umap(adata)
+sc.tl.leiden(adata)
 
-# # UMAP & spatial plots
-# sc.pl.umap(adata, color=["total_counts", "n_genes_by_counts", "leiden"], wspace=0.4, save=True)
+# UMAP & spatial plots
+sc.pl.umap(adata, color=["total_counts", "n_genes_by_counts", "leiden"], wspace=0.4, save=True)
 
-# adata.obs["x_global_px"] = adata.obsm['spatial'][:,0]
-# adata.obs["y_global_px"] = adata.obsm['spatial'][:,1]
+adata.obs["x_global_px"] = adata.obsm['spatial'][:,0]
+adata.obs["y_global_px"] = adata.obsm['spatial'][:,1]
 
-# g = sns.scatterplot(x="x_global_px", y="y_global_px", s=2, marker='.', 
-#                     data=adata.obs, hue='leiden', palette = "Set2")
-# sns.move_legend(g, "upper left", bbox_to_anchor=(1, 1))
-# handles, labels = g.get_legend_handles_labels()
-# for h in handles:
-#     sizes = h.get_markersize()*8
-#     h.set_markersize(sizes)
-# plt.legend(handles, labels, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0, ncol=2)
-# g.set_ylabel("")
-# g.set_xlabel("")
-# plt.tight_layout()
-# plt.savefig('Sample_display_transcripts_cluster.png', format = 'png', dpi = 600)
+g = sns.scatterplot(x="x_global_px", y="y_global_px", s=2, marker='.', 
+                    data=adata.obs, hue='leiden', palette = "Set2")
+sns.move_legend(g, "upper left", bbox_to_anchor=(1, 1))
+handles, labels = g.get_legend_handles_labels()
+for h in handles:
+    sizes = h.get_markersize()*8
+    h.set_markersize(sizes)
+plt.legend(handles, labels, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0, ncol=2)
+g.set_ylabel("")
+g.set_xlabel("")
+plt.tight_layout()
+plt.savefig('Sample_display_transcripts_cluster.png', format = 'png', dpi = 600)
 
 # ========================
 # Visualise specific ROI
