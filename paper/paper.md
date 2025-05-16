@@ -1,5 +1,5 @@
 ---
-title: 'Spatial trancriptomics workflow'
+title: 'MOSAIK: Multi-Origin Spatial Transcriptomics Analysis and Integration Kit'
 tags:
   - Python
   - Spatial-transcriptomics
