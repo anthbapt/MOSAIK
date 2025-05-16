@@ -12,7 +12,7 @@ authors:
   - name: Rosamond Nuamah
     orcid: 0000-0002-6376-6922
     affiliation: "1"
- - name: Ciro Chiappini
+  - name: Ciro Chiappini
     orcid: 0000-0002-9893-4359
     affiliation: "3, 4"
   - name: Anita Grigoriadis
