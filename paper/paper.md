@@ -52,14 +52,7 @@ This integrated pipeline provides a foundation for downstream modelling and anal
 # Overview of the workflow
 The MOSAIK workflow ([https://github.com/anthbapt/MOSAIK](https://github.com/anthbapt/MOSAIK)) supports both CosMx and Xenium ST platforms through modular pipelines designed for data integration, visualisation, and analysis (Fig. 1). For CosMx , data are first exported from the AtoMx platform, including all Flat Files and relevant Raw Files such as Morphology2D. These files are uncompressed and organised using helper scripts to generate structured directories (e.g., CellComposite, CellLabels) essential for downstream processing. 
 
----
-
-<figure>
-  <img src="figures/Figure1.png" alt="Alt text">
-  <figcaption>Figure 1: The MOSAIK workflow is divided into two parts: the visualisation component, which enables quality assessment of the immunofluorescence staining and verification of cell segmentation; and the data integration component, which leads to downstream analysis. 1: The MOSAIK visualisation is based on two visualisation strategies: On one hand, Napari with the CosMx plugin to visualise CosMx data; on the other hand, Xenium Explorer for Xenium data. 2: MOSAIK analysis takes the raw data and converts it into a Python object, making it easy to perform quality control and facilitate downstream analysis.</figcaption>
-</figure>
-
----
+![Figure 1: The MOSAIK workflow is divided into two parts: the visualisation component, which enables quality assessment of the immunofluorescence staining and verification of cell segmentation; and the data integration component, which leads to downstream analysis. 1: The MOSAIK visualisation is based on two visualisation strategies: On one hand, Napari with the CosMx plugin to visualise CosMx data; on the other hand, Xenium Explorer for Xenium data. 2: MOSAIK analysis takes the raw data and converts it into a Python object, making it easy to perform quality control and facilitate downstream analysis.](figures/Figure1.png)
 
 Structured inputs are then read into the analysis pipeline using a custom reader, which extends the spatialdata\_io framework to incorporate various image types along with cell shape annotations (polygons). These information are stored into a Zarr file, which is open standard for storing large multidimensional array data. Then, resulting Zarr object is processed using Python-based tools such as squidpy and spatialdata for quality control and downstream analyses, including re-segmentation, cell typing, niche identification,
 or cell-cell communication. 
@@ -68,14 +61,7 @@ Xenium data follow a similar pipeline. Data are exported directly from the instr
 
 MOSAIK is the first fully integrated end-to-end workflow that supports both CosMx and Xenium raw data, standardising their output into a unified spatial data format (Fig. 2). The entire process is thoroughly documented in the [MOSAIK GitHub repository](https://github.com/anthbapt/MOSAIK/tree/main), which includes two example workflows: one using a publicly available CosMx dataset from the NanoString website, and another using a Xenium dataset from the 10x Genomics platform.
 
----
-
-<figure>
-  <img src="figures/Figure2.png" alt="Alt text">
-  <figcaption>Figure 2:The Python SpatialData object obtained after using the MOSAIK workflow embeds both CosMx and Xenium data into similar objects, which can be combined or compared. MOSAIK, along with the Python library spatialdata, allows for the visualisation and connection of SpatialElements: Images (e.g., H\&E or immunofluorescence stains), Labels (segmentation maps), Points (i.e., transcripts), and Shapes (e.g., cell/nucleus boundaries or ROIs). The first two objects are raster objects (images), and the last two are vector objects (points and polygons). The CosMx fields of view are defined by a $510\,\mu\mathrm{m}$ square box, and for Xenium, each pixel represents $0.2125\,\mu\mathrm{m}$. Both CosMx and Xenium data are sourced from public repositories (see the Data availability section). </figcaption>
-</figure>
-
----
+![Figure 2:The Python SpatialData object obtained after using the MOSAIK workflow embeds both CosMx and Xenium data into similar objects, which can be combined or compared. MOSAIK, along with the Python library spatialdata, allows for the visualisation and connection of SpatialElements: Images (e.g., H\&E or immunofluorescence stains), Labels (segmentation maps), Points (i.e., transcripts), and Shapes (e.g., cell/nucleus boundaries or ROIs). The first two objects are raster objects (images), and the last two are vector objects (points and polygons). The CosMx fields of view are defined by a $510\,\mu\mathrm{m}$ square box, and for Xenium, each pixel represents $0.2125\,\mu\mathrm{m}$. Both CosMx and Xenium data are sourced from public repositories (see the Data availability section).](figures/Figure2.png)
 
 Finally, we have created a GitHub repository ([https://github.com/anthbapt/Spatial-Biology-Tools](https://github.com/anthbapt/Spatial-Biology-Tools)) that compiles a collection of Python tools designed to be used alongside or after integration with our workflow. These tools support a wide range of applications, including segmentation, cell typing, domain identification, gene imputation, detection of spatially variable genes, cell–cell communication analysis, dimensionality reduction, multimodal integration, and the use of foundation models, among others. By providing this curated collection, our goal is to guide users seamlessly from raw data to advanced analytical applications, all within a unified and community-supported framework.
 
