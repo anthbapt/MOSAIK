@@ -28,8 +28,6 @@ In the following section, we will guide you through the process of using MOSAIK 
 - Xenium explanation folder (`tools/Xenium_data.xlsx`)
 - CosMx/Xenium Reader (`src/reader/`)
 - CosMx/Xenium QC scripts (`src/qc/`)
-- CosMx/Xenium resegmentation scripts (`src/segmentation/`)
-- CosMx/Xenium analysis codes (`src/analysis/`)
 
 ### MOSAIK workflow
 
