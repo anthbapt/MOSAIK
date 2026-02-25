@@ -41,13 +41,13 @@ zarr_path = "ZarrName.zarr"
 # slide:
 #   Path to the slide-specific directory (often a flattened structure used for annotations,
 #   cell labels, or per-slide data). This typically corresponds to a single TMA or slide.
-slide = "/Xenium_study_raw_folder"
+slide = "Xenium_study_raw_folder"
 
 first_run = user_input = input("Is it the first run (0: False, 1: True): ")
 
 # update=True, if the Xenium is after October 2025 (10X Xenium changes the format of the channels)
 if first_run == '1':
-    sdata = xenium.xenium(path, update=True)
+    sdata = xenium.xenium(path + slide, update=True)
     sdata.write(zarr_path)
 
 sdata = sd.read_zarr(zarr_path)
