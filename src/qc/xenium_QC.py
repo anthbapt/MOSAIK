@@ -25,7 +25,6 @@ from sbf import visualise_crop
 from skimage.transform import AffineTransform, warp
 
 import spatialdata as sd
-from spatialdata_io import xenium
 import spatialdata_plot
 import scanpy as sc
 import xenium
@@ -42,12 +41,13 @@ zarr_path = "ZarrName.zarr"
 # slide:
 #   Path to the slide-specific directory (often a flattened structure used for annotations,
 #   cell labels, or per-slide data). This typically corresponds to a single TMA or slide.
-slide = "/flatFiles/SLIDENAME"
+slide = "/Xenium_study_raw_folder"
 
 first_run = user_input = input("Is it the first run (0: False, 1: True): ")
 
+# update=True, if the Xenium is after October 2025 (10X Xenium changes the format of the channels)
 if first_run == '1':
-    sdata = xenium.xenium(path)
+    sdata = xenium.xenium(path, update=True)
     sdata.write(zarr_path)
 
 sdata = sd.read_zarr(zarr_path)
