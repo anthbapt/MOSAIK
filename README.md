@@ -9,7 +9,7 @@
 [![Documentation Status](https://readthedocs.org/projects/mosaik-docs/badge/?version=latest)](https://mosaik-docs.readthedocs.io/en/latest/?badge=latest)
 
 
-Please cite the following paper if you use MOSAIK in your research: [Baptista et al., (2026). MOSAIK: Multi-Origin Spatial Transcriptomics Analysis and Integration Kit. Journal of Open Source Software, 11(117), 8795, https://doi.org/10.21105/joss.08795]([https://arxiv.org/abs/2505.11384](https://joss.theoj.org/papers/10.21105/joss.08795))
+Please cite the following paper if you use MOSAIK in your research: [Baptista et al., (2026). MOSAIK: Multi-Origin Spatial Transcriptomics Analysis and Integration Kit. Journal of Open Source Software, 11(117), 8795](https://doi.org/10.21105/joss.08795)
 
 ⭐ New: FOVs Stitching and Resegmentation with MOSAIK
 Stitch CosMx Field of Views (FOVs) and resegment your samples (CosMx and Xenium support) using MOSAIK's enhanced pipeline. The workflow preprocesses images, applies Cellpose-SAM for segmentation, and uses geometric features to automatically remove artifacts. These features can be found in ``src/resegmentation`` folder.
